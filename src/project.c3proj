@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 35000,
-	"name": "LowRezPrototype",
+	"name": "A_River_Beyond",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -501,7 +501,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "1.0.0.0",
+		"version": "a0.1",
 		"author": "LetTheMiceFree",
 		"authorEmail": "me@emile.kiwi",
 		"authorWebsite": "emile.kiwi",
