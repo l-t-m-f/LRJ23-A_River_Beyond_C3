@@ -1,0 +1,205 @@
+{
+	"name": "eGame",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ePassenger"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eControls"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eVFX"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eDialogs"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eCharacter"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 351320779792155
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 253843205147078,
+					"parameters": {
+						"cursor-style": "none"
+					}
+				},
+				{
+					"callFunction": "SpawnPassenger",
+					"sid": 577905678254378
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 785066365994858,
+					"parameters": {
+						"tag": "\"\"",
+						"file": "TextsModel.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 544444437837005
+				},
+				{
+					"id": "parse",
+					"objectClass": "Texts",
+					"sid": 557694650818304,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 120243797533714,
+					"parameters": {
+						"tag": "\"\"",
+						"file": "LayoutStateModel.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 724469945902757
+				},
+				{
+					"id": "load",
+					"objectClass": "DAT_LayoutState",
+					"sid": 814244404097774,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"callFunction": "ShowDialog",
+					"sid": 439131746749166,
+					"disabled": true
+				},
+				{
+					"callFunction": "RefreshLayoutDialog",
+					"sid": 261350686823814,
+					"disabled": true
+				},
+				{
+					"callFunction": "HideDialog",
+					"sid": 957966060980482
+				}
+			],
+			"sid": 850147625136514,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 493760389202990,
+							"parameters": {
+								"object": "T_Pixels",
+								"expression": "T_Pixels.TemplateName",
+								"comparison": 0,
+								"value": "\"Fade\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-fade",
+							"objectClass": "T_Pixels",
+							"sid": 642934459871231,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 252817555096256
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 438044765175275,
+							"parameters": {
+								"object": "PathfindingTrait"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "regenerate-obstacle-map",
+							"objectClass": "PathfindingTrait",
+							"sid": 110661580674366,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 732454762465870
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 337812076156236,
+							"parameters": {
+								"object": "OBJ_CharacterSpawner"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SpawnCharacter",
+							"sid": 769281919820799,
+							"parameters": [
+								"OBJ_CharacterSpawner.X",
+								"OBJ_CharacterSpawner.Y",
+								"OBJ_CharacterSpawner.Character"
+							]
+						}
+					],
+					"sid": 393158897305418
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 429862818326940
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "T_Cursor",
+					"sid": 213468485232238,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 458448013466912
+		}
+	],
+	"sid": 586129354926435
+}

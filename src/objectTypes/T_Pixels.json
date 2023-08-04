@@ -1,0 +1,29 @@
+{
+	"name": "T_Pixels",
+	"plugin-id": "TiledBg",
+	"sid": 378581176582741,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "vignette",
+			"name": "Vignette"
+		},
+		{
+			"effectId": "multiply",
+			"name": "Multiply"
+		}
+	],
+	"image": {
+		"width": 1,
+		"height": 1,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 9374575,
+		"useCollisionPoly": true
+	}
+}

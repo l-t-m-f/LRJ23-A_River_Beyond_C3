@@ -1,0 +1,559 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 35000,
+	"name": "LowRezPrototype",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "dodge",
+			"name": "Dodge",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "multiply",
+			"name": "Multiply",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "pixellate",
+			"name": "Pixellate",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "screen",
+			"name": "Screen",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "vignette",
+			"name": "Vignette",
+			"author": "Brad Larson",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "warpobject",
+			"name": "Warp object",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "hj0nsq1cgjj",
+	"objectTypes": {
+		"items": [
+			"T_ParticleFlake_type1",
+			"OBJ_ParticleSpawner",
+			"Text",
+			"Mouse",
+			"AJAX",
+			"Texts",
+			"DevelopperKeyboard",
+			"T_Pixels",
+			"OBJ_CharacterSpawner",
+			"OBJ_Button",
+			"T_ButtonMainMenuBG",
+			"OBJ_Enemy"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"T_PassengerPortrait",
+					"OBJ_PassengerPawn",
+					"T_PassengerPawn"
+				],
+				"subfolders": [],
+				"name": "Passenger"
+			},
+			{
+				"items": [
+					"OBJ_MapTransit",
+					"OBJ_PathNode",
+					"OBJ_PathTarget",
+					"T_MapTransit",
+					"T_MoveTargetVFX"
+				],
+				"subfolders": [],
+				"name": "Navigation"
+			},
+			{
+				"items": [
+					"T_CharonPortrait"
+				],
+				"subfolders": [],
+				"name": "Charon"
+			},
+			{
+				"items": [
+					"OBJ_Boat",
+					"T_Boat"
+				],
+				"subfolders": [],
+				"name": "Boat"
+			},
+			{
+				"items": [
+					"T_Cursor",
+					"T_Button",
+					"T_DialogBoxNpatch",
+					"T_DialogButtonNpatch",
+					"OBJ_ResizeDialogButton",
+					"OBJ_NextLineButton",
+					"T_NextLineButton",
+					"T_ResizeDialogButton",
+					"DAT_LayoutState"
+				],
+				"subfolders": [],
+				"name": "Dialogs"
+			},
+			{
+				"items": [
+					"T_Bell",
+					"T_EntityShadow"
+				],
+				"subfolders": [],
+				"name": "Misc"
+			},
+			{
+				"items": [
+					"T_ArrivalBackgroundTiled",
+					"T_SeaTiled",
+					"TiledBackground",
+					"T_Sun",
+					"T_Gravestone",
+					"T_Sea",
+					"T_EnvironmentMap1",
+					"OBJ_CollisionMap",
+					"T_ArenaRingNPatch",
+					"T_ColorMap"
+				],
+				"subfolders": [],
+				"name": "Environment"
+			},
+			{
+				"items": [
+					"OBJ_ChallengeShrine"
+				],
+				"subfolders": [],
+				"name": "Challenges"
+			},
+			{
+				"items": [
+					"OBJ_Character",
+					"T_FacelessGhost"
+				],
+				"subfolders": [],
+				"name": "Characters"
+			},
+			{
+				"items": [
+					"OBJ_TearProjectile",
+					"OBJ_ProjectileTarget",
+					"T_ProjectileTarget",
+					"T_TearProjectile_type1"
+				],
+				"subfolders": [],
+				"name": "Weapons"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"PathfindingTrait",
+			"RotateTrait",
+			"FadeTrait",
+			"SizeWaveTrait",
+			"TweenNPatchTrait",
+			"TextFadeTrait",
+			"VerticalWaveTrait",
+			"TweenTrait",
+			"TweenTiledTrait",
+			"FadeTiledTrait",
+			"PutOnEntityLayerGroup",
+			"WidthSineTrait",
+			"HorizontalWaveTrait",
+			"BulletTrait",
+			"PutOnFloorStuffLayerGroup",
+			"LineOfSightTrait",
+			"DestroyOutsideLayoutTrait"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Minigame",
+			"GameHUD"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Arrival",
+					"Core",
+					"Shore",
+					"Arena"
+				],
+				"subfolders": [],
+				"name": "Loop"
+			},
+			{
+				"items": [
+					"References"
+				],
+				"subfolders": [],
+				"name": "Dev"
+			},
+			{
+				"items": [
+					"Boat"
+				],
+				"subfolders": [],
+				"name": "Ending"
+			},
+			{
+				"items": [
+					"Layout 1",
+					"MainMenu"
+				],
+				"subfolders": [],
+				"name": "Menus"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [
+			"ePassenger",
+			"eGame",
+			"eControls",
+			"eVFX",
+			"eDialogs",
+			"eCharacter"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "poh_pixels.ttf",
+					"type": "application/font-sfnt",
+					"sid": 820890923814138,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 866942712561814,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 287749538693333,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 272129089661390,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 616372700583841,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 508261266057373,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 741400786870007,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 650978039137487,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [
+				{
+					"name": "TextsModel.json",
+					"type": "application/json",
+					"sid": 125828224770849,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LayoutStateModel.json",
+					"type": "application/json",
+					"sid": 803876301698361,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "LetTheMiceFree",
+		"authorEmail": "me@emile.kiwi",
+		"authorWebsite": "emile.kiwi",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "regular",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-integer-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "any",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "off",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "percent",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false,
+		"exportFileStructure": "folders",
+		"uidAllocationMode": "increment"
+	},
+	"viewportWidth": 64,
+	"viewportHeight": 64,
+	"firstLayout": "Arrival"
+}

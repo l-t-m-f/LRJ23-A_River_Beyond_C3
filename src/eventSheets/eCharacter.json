@@ -1,0 +1,179 @@
+{
+	"name": "eCharacter",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "PutOnEntityLayerGroup",
+					"sid": 889007378393059
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "PutOnEntityLayerGroup",
+					"sid": 604265551002542,
+					"parameters": {
+						"layer": "\"Entities\""
+					}
+				}
+			],
+			"sid": 878148692648202,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "PutOnEntityLayerGroup",
+							"sid": 590353490041158,
+							"parameters": {
+								"instance-variable": "bShouldBePutOnTop"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-top",
+							"objectClass": "PutOnEntityLayerGroup",
+							"sid": 646331260179327
+						}
+					],
+					"sid": 872188478882896
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 500074854022594
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-bottom",
+							"objectClass": "PutOnEntityLayerGroup",
+							"sid": 590423003387810
+						}
+					],
+					"sid": 335324641121710
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "PutOnFloorStuffLayerGroup",
+					"sid": 859063422774099
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "PutOnFloorStuffLayerGroup",
+					"sid": 256718498692253,
+					"parameters": {
+						"layer": "\"FloorStuff\""
+					}
+				}
+			],
+			"sid": 522845871198251,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "PutOnFloorStuffLayerGroup",
+							"sid": 260334613200624,
+							"parameters": {
+								"instance-variable": "bShouldBePutOnTop"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-top",
+							"objectClass": "PutOnFloorStuffLayerGroup",
+							"sid": 765040447810926
+						}
+					],
+					"sid": 510509722374207
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 781185542539554
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-bottom",
+							"objectClass": "PutOnFloorStuffLayerGroup",
+							"sid": 980206647630383
+						}
+					],
+					"sid": 873283741197559
+				}
+			]
+		},
+		{
+			"functionName": "SpawnCharacter",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "spawnX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 103377233193105
+				},
+				{
+					"name": "spawnY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 887804159716984
+				},
+				{
+					"name": "characterName",
+					"type": "string",
+					"initialValue": "NULL",
+					"comment": "",
+					"sid": 369220833144627
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 338115946349591,
+					"parameters": {
+						"object-to-create": "OBJ_Character",
+						"layer": "\"DebugEntities\"",
+						"x": "spawnX",
+						"y": "spawnY",
+						"create-hierarchy": true,
+						"template-name": "characterName"
+					}
+				}
+			],
+			"sid": 486026332064256
+		}
+	],
+	"sid": 378673860315005
+}

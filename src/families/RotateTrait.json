@@ -1,0 +1,17 @@
+{
+	"name": "RotateTrait",
+	"plugin-id": "Sprite",
+	"sid": 680148118488523,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 990796124180790
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_ParticleFlake_type1"
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"name": "T_ParticleFlake_type1",
+	"plugin-id": "Sprite",
+	"sid": 727910123158581,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "screen",
+			"name": "Screen"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1,
+						"height": 1,
+						"originX": 1.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9687456,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 218546409453053,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

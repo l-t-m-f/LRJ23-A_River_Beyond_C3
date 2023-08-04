@@ -1,0 +1,369 @@
+{
+	"name": "eControls",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 225428149873579,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 739113929460860,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 799045138056803,
+							"parameters": {
+								"object": "T_DialogBoxNpatch"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 948849176903966,
+							"parameters": {
+								"variable": "bIsHidden"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 834779283462922,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 252543848703363,
+									"parameters": {
+										"variable": "bIsDisplayingChoices"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 642091589086906,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 629921763467627,
+											"parameters": {
+												"object": "OBJ_ResizeDialogButton"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 632739116630647,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 404348902260660,
+													"parameters": {
+														"variable": "bIsShrinked"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "EnterShrinkedMode",
+													"sid": 355237266855646
+												}
+											],
+											"sid": 953247234341575
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 877571622465110
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ExitShrinkedMode",
+													"sid": 722388532686817
+												}
+											],
+											"sid": 903293639443113
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 177879641835894
+										},
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 566039968388014,
+											"parameters": {
+												"object": "OBJ_NextLineButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 614530057774664,
+											"disabled": true,
+											"parameters": {
+												"variable": "CurrentLayoutDialogLine",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "MoveUpNextLine",
+											"sid": 460516524594405
+										},
+										{
+											"callFunction": "RefreshLayoutDialog",
+											"sid": 155148995364998
+										}
+									],
+									"sid": 492211634538627
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 531377048682830
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "OBJ_PathNode",
+							"sid": 111224299041572
+						},
+						{
+							"id": "destroy",
+							"objectClass": "OBJ_PathTarget",
+							"sid": 864861172619309
+						},
+						{
+							"id": "find-path",
+							"objectClass": "OBJ_PassengerPawn",
+							"sid": 413119200372049,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y+2"
+							}
+						}
+					],
+					"sid": 963329070486355
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 869760812374123,
+					"parameters": {
+						"mouse-button": "right",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "PassengerShoot",
+					"sid": 273076568171673,
+					"parameters": [
+						"Mouse.X",
+						"Mouse.Y"
+					]
+				}
+			],
+			"sid": 532865184256127
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "DevelopperKeyboard",
+					"sid": 228598836571879,
+					"parameters": {
+						"key": 49
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 747572978700807,
+					"parameters": {
+						"variable": "bIsShrinked"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 136986124418701,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 543741171844019,
+							"parameters": {
+								"variable": "bIsDisplayingChoices"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "EnterChoiceMode",
+							"sid": 583015438817646
+						}
+					],
+					"sid": 566589655491021
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 169995067453120
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ExitChoiceMode",
+							"sid": 417045812086346
+						}
+					],
+					"sid": 821949242508207
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "DevelopperKeyboard",
+					"sid": 797373957147240,
+					"parameters": {
+						"key": 50
+					}
+				}
+			],
+			"actions": [],
+			"sid": 114297893271319
+		},
+		{
+			"functionName": "MoveUpNextLine",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 538056149746687,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-element",
+							"objectClass": "DAT_LayoutState",
+							"sid": 519082409197311,
+							"parameters": {
+								"axes": "x"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 214790853976921,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-at-xy",
+									"objectClass": "DAT_LayoutState",
+									"sid": 361278352227228,
+									"parameters": {
+										"x": "DAT_LayoutState.CurX",
+										"y": "0",
+										"comparison": 0,
+										"value": "LayoutName"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-xy",
+									"objectClass": "DAT_LayoutState",
+									"sid": 593132138698483,
+									"parameters": {
+										"x": "DAT_LayoutState.CurX",
+										"y": "1",
+										"value": "int(DAT_LayoutState.At(DAT_LayoutState.CurX, 1))+1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 851914555162804,
+									"parameters": {
+										"variable": "CurrentLayoutDialogLine",
+										"value": "int(DAT_LayoutState.At(DAT_LayoutState.CurX, 1))"
+									}
+								}
+							],
+							"sid": 913517581169273
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 559390313893143
+}

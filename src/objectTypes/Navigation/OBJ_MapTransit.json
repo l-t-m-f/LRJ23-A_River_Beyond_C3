@@ -1,0 +1,59 @@
+{
+	"name": "OBJ_MapTransit",
+	"plugin-id": "Sprite",
+	"sid": 721598762520748,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "GotoX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 564660126790337
+		},
+		{
+			"name": "GotoY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 612004672884189
+		},
+		{
+			"name": "GotoLayout",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 946999417012290
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 6,
+						"height": 6,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3974307,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 151967510146340,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

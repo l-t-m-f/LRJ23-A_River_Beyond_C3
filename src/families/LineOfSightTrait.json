@@ -1,0 +1,11 @@
+{
+	"name": "LineOfSightTrait",
+	"plugin-id": "Sprite",
+	"sid": 159222803513717,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"OBJ_Character"
+	]
+}

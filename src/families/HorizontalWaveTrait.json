@@ -1,0 +1,17 @@
+{
+	"name": "HorizontalWaveTrait",
+	"plugin-id": "Sprite",
+	"sid": 508843859994160,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine2",
+			"sid": 535480563302779
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_Sun"
+	]
+}

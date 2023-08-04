@@ -1,0 +1,10 @@
+{
+	"name": "DevelopperKeyboard",
+	"plugin-id": "Keyboard",
+	"sid": 436119121992146,
+	"singleglobal-inst": {
+		"type": "DevelopperKeyboard",
+		"properties": {},
+		"uid": 33
+	}
+}

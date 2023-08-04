@@ -1,0 +1,25 @@
+{
+	"name": "T_SeaTiled",
+	"plugin-id": "TiledBg",
+	"sid": 970113732407290,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "warpobject",
+			"name": "WarpObject"
+		}
+	],
+	"image": {
+		"width": 64,
+		"height": 64,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3958233,
+		"useCollisionPoly": true
+	}
+}

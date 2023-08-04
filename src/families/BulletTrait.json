@@ -1,0 +1,17 @@
+{
+	"name": "BulletTrait",
+	"plugin-id": "Sprite",
+	"sid": 558079248923058,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 910857366450719
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_TearProjectile"
+	]
+}

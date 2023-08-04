@@ -1,0 +1,17 @@
+{
+	"name": "TweenTrait",
+	"plugin-id": "Sprite",
+	"sid": 524147209154746,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 221454328169497
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_ResizeDialogButton"
+	]
+}

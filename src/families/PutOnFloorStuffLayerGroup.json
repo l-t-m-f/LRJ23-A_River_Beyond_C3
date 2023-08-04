@@ -1,0 +1,20 @@
+{
+	"name": "PutOnFloorStuffLayerGroup",
+	"plugin-id": "Sprite",
+	"sid": 233475951125679,
+	"instanceVariables": [
+		{
+			"name": "bShouldBePutOnTop",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 629207368449358
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"T_MoveTargetVFX",
+		"T_ProjectileTarget"
+	]
+}

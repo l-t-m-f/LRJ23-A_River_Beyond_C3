@@ -1,0 +1,42 @@
+{
+	"name": "eVFX",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "T_ParticleFlake_type1",
+					"sid": 273745284019018
+				}
+			],
+			"actions": [
+				{
+					"id": "set-z-elevation",
+					"objectClass": "T_ParticleFlake_type1",
+					"sid": 783977784637297,
+					"parameters": {
+						"z": "random(0,32)"
+					}
+				},
+				{
+					"id": "restart-fade",
+					"objectClass": "T_ParticleFlake_type1",
+					"sid": 371988133559471,
+					"behaviorType": "Fade"
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "T_ParticleFlake_type1",
+					"sid": 729497668088318,
+					"behaviorType": "Rotate",
+					"parameters": {
+						"speed": "choose(-15, -12, -10, -7, -5, 5, 7, 10, 12, 15)"
+					}
+				}
+			],
+			"sid": 668590664553032
+		}
+	],
+	"sid": 282637371163678
+}

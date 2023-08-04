@@ -1,0 +1,17 @@
+{
+	"name": "TweenNPatchTrait",
+	"plugin-id": "NinePatch",
+	"sid": 763798180201741,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 334233704408643
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_DialogBoxNpatch"
+	]
+}

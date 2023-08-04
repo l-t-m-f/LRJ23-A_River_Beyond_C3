@@ -1,0 +1,61 @@
+{
+	"name": "T_NextLineButton",
+	"plugin-id": "Sprite",
+	"sid": 599481765789457,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 6,
+						"height": 3,
+						"originX": 0.3333333333333333,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7960295,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 6,
+						"height": 3,
+						"originX": 0.16666666666666666,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 116123,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 6,
+						"height": 3,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6876134,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 186749056385545,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 3
+			}
+		],
+		"subfolders": []
+	}
+}

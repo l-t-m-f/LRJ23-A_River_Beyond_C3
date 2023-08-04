@@ -1,0 +1,17 @@
+{
+	"name": "PathfindingTrait",
+	"plugin-id": "Sprite",
+	"sid": 472036971113963,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 590477942558629
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_PassengerPawn"
+	]
+}

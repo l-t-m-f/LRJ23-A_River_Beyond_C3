@@ -1,0 +1,78 @@
+{
+	"name": "T_MoveTargetVFX",
+	"plugin-id": "Sprite",
+	"sid": 892272858805630,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "dodge",
+			"name": "Dodge"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 5,
+						"height": 3,
+						"originX": 0.5,
+						"originY": 0.3333333333333333,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7702117,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.6,
+								0,
+								0.6,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 6,
+						"height": 3,
+						"originX": 0.5,
+						"originY": 0.3333333333333333,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6735288,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.6666666666666666,
+								0,
+								0.6666666666666666,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 969218343463442,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			}
+		],
+		"subfolders": []
+	}
+}

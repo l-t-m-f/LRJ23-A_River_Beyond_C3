@@ -1,0 +1,19 @@
+{
+	"name": "FadeTrait",
+	"plugin-id": "Sprite",
+	"sid": 152447001906314,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 219887624012627
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_ParticleFlake_type1",
+		"T_ResizeDialogButton",
+		"T_NextLineButton"
+	]
+}

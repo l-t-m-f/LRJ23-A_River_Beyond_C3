@@ -1,0 +1,17 @@
+{
+	"name": "DestroyOutsideLayoutTrait",
+	"plugin-id": "Sprite",
+	"sid": 359918506045532,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 966789011073702
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_TearProjectile"
+	]
+}

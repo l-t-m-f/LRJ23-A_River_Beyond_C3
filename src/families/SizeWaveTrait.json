@@ -1,0 +1,17 @@
+{
+	"name": "SizeWaveTrait",
+	"plugin-id": "Sprite",
+	"sid": 251365753197424,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 299279966806660
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_ParticleFlake_type1"
+	]
+}

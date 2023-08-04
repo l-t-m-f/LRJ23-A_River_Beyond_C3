@@ -1,0 +1,19 @@
+{
+	"name": "VerticalWaveTrait",
+	"plugin-id": "Sprite",
+	"sid": 683733405081566,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 508249652607233
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_ResizeDialogButton",
+		"T_Sun",
+		"T_TearProjectile_type1"
+	]
+}

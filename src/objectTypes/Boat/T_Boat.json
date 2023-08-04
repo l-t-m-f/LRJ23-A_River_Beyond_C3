@@ -1,0 +1,43 @@
+{
+	"name": "T_Boat",
+	"plugin-id": "Sprite",
+	"sid": 716953238639997,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 816423225081536
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 54,
+						"height": 38,
+						"originX": 0.5,
+						"originY": 0.7105263157894737,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 319938,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 842389925001482,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

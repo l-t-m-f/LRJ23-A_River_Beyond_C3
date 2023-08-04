@@ -1,0 +1,17 @@
+{
+	"name": "FadeTiledTrait",
+	"plugin-id": "TiledBg",
+	"sid": 292587808735928,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 573145763489306
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_Pixels"
+	]
+}

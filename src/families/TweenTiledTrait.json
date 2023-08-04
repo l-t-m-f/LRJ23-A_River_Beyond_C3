@@ -1,0 +1,11 @@
+{
+	"name": "TweenTiledTrait",
+	"plugin-id": "TiledBg",
+	"sid": 924285675854684,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"T_Pixels"
+	]
+}
