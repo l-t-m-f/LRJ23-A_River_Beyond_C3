@@ -22,6 +22,10 @@
 			"includeSheet": "eCharacter"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "eEnemy"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -93,7 +97,7 @@
 					"disabled": true
 				},
 				{
-					"callFunction": "RefreshLayoutDialog",
+					"callFunction": "ActuateDialogText",
 					"sid": 261350686823814,
 					"disabled": true
 				},
@@ -175,6 +179,31 @@
 						}
 					],
 					"sid": 393158897305418
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 197838336274494,
+							"parameters": {
+								"object": "OBJ_EnemySpawner"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SpawnEnemy",
+							"sid": 276212188046570,
+							"parameters": [
+								"\"Amygdala\"",
+								"OBJ_EnemySpawner.X",
+								"OBJ_EnemySpawner.Y"
+							]
+						}
+					],
+					"sid": 924039554705633
 				}
 			]
 		},

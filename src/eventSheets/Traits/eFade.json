@@ -1,0 +1,219 @@
+{
+	"name": "eFade",
+	"events": [
+		{
+			"functionName": "FadeSet",
+			"functionDescription": "",
+			"functionCategory": "Fade",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "traitOwnerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 233683751680739
+				},
+				{
+					"name": "fadeInDuration",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 604947475631038
+				},
+				{
+					"name": "waitDuration",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 438110621750182
+				},
+				{
+					"name": "fadeOutDuration",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 812984462212130
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 846486377440917,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "FadeTrait",
+							"sid": 194152102916607,
+							"parameters": {
+								"unique-id": "traitOwnerUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-in-time",
+							"objectClass": "FadeTrait",
+							"sid": 411507662384652,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-in-time": "fadeInDuration"
+							}
+						},
+						{
+							"id": "set-fade-in-time",
+							"objectClass": "FadeTrait",
+							"sid": 925965725734168,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-in-time": "waitDuration"
+							}
+						},
+						{
+							"id": "set-fade-in-time",
+							"objectClass": "FadeTrait",
+							"sid": 635527296290393,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-in-time": "fadeOutDuration"
+							}
+						}
+					],
+					"sid": 173733353695552
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 183867011257624
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "FadeTrait",
+							"sid": 595950250753830,
+							"parameters": {
+								"unique-id": "traitOwnerUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 606240238502751
+				}
+			]
+		},
+		{
+			"functionName": "FadeActivate",
+			"functionDescription": "",
+			"functionCategory": "Fade",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "traitOwnerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 463259051919332
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "FadeTrait",
+					"sid": 641087508472592,
+					"parameters": {
+						"unique-id": "traitOwnerUID"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-fade",
+					"objectClass": "FadeTrait",
+					"sid": 516377147081161,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 737539259111954
+		},
+		{
+			"functionName": "FadeSetAndActivate",
+			"functionDescription": "",
+			"functionCategory": "Fade",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "traitOwnerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 656811794378587
+				},
+				{
+					"name": "fadeInDuration",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 720405366434525
+				},
+				{
+					"name": "waitDuration",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 379562753088677
+				},
+				{
+					"name": "fadeOutDuration",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 686898303887844
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "FadeTrait",
+					"sid": 869886095097228,
+					"parameters": {
+						"unique-id": "traitOwnerUID"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "FadeSet",
+					"sid": 637060793185751,
+					"parameters": [
+						"-1",
+						"fadeInDuration",
+						"waitDuration",
+						"fadeOutDuration"
+					]
+				},
+				{
+					"callFunction": "FadeActivate",
+					"sid": 890209706990462,
+					"parameters": [
+						"-1"
+					]
+				}
+			],
+			"sid": 558186662758876
+		}
+	],
+	"sid": 284544854882565
+}

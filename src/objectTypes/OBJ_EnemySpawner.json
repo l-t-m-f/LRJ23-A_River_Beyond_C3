@@ -1,0 +1,45 @@
+{
+	"name": "OBJ_EnemySpawner",
+	"plugin-id": "Sprite",
+	"sid": 723159422507315,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Enemy",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 466997153349197
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6771730,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 718795153844633,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -2,8 +2,22 @@
 	"name": "LineOfSightTrait",
 	"plugin-id": "Sprite",
 	"sid": 159222803513717,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "bHasSightOfTarget",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 293061663175064
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 499930061061792
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"OBJ_Character"

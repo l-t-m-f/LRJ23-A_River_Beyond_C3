@@ -1,0 +1,17 @@
+{
+	"name": "FlashTrait",
+	"plugin-id": "Sprite",
+	"sid": 935478266940605,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 942015918439713
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_EnemyAmygdala"
+	]
+}

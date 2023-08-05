@@ -1,20 +1,18 @@
 {
-	"name": "VerticalWaveTrait",
+	"name": "AngleWaveTrait",
 	"plugin-id": "Sprite",
-	"sid": 683733405081566,
+	"sid": 468729668410416,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Sin",
-			"name": "Sine",
-			"sid": 508249652607233
+			"name": "AngleSine",
+			"sid": 477001293402422
 		}
 	],
 	"effectTypes": [],
 	"members": [
-		"T_ResizeDialogButton",
-		"T_Sun",
-		"T_TearProjectile_type1",
+		"T_CharacterExclamationSymbol",
 		"T_EnemyAmygdala"
 	]
 }

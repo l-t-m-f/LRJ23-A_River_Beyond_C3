@@ -1,0 +1,26 @@
+{
+	"name": "DialogHolderGroup",
+	"plugin-id": "Sprite",
+	"sid": 585231450689913,
+	"instanceVariables": [
+		{
+			"name": "CurrentLine",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 433349698706837
+		},
+		{
+			"name": "CurrentQuest",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 144991943566955
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"OBJ_Character"
+	]
+}

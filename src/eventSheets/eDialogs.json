@@ -202,6 +202,114 @@
 			"sid": 268259133999537
 		},
 		{
+			"functionName": "GotoToDialogLine",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "newDialogLine",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 235275592748962
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 591630575661665,
+					"parameters": {
+						"variable": "CurrentLayoutDialogLine",
+						"value": "newDialogLine"
+					}
+				}
+			],
+			"sid": 457682223997422
+		},
+		{
+			"functionName": "JumpToPreviousDialogLine",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 257771651965958,
+					"parameters": {
+						"variable": "CurrentLayoutDialogLine",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 732719835840000
+		},
+		{
+			"functionName": "JumpToNextDialogLine",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 890856498373123,
+					"parameters": {
+						"variable": "CurrentLayoutDialogLine",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 683354906263709
+		},
+		{
+			"functionName": "GotoQuest",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "newQuest",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 847436053133598
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 804842758659219,
+					"parameters": {
+						"variable": "CurrentLayoutDialogQuest",
+						"value": "newQuest"
+					}
+				}
+			],
+			"sid": 675182520130461
+		},
+		{
 			"functionName": "ShowDialog",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -230,78 +338,14 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 746052286085342,
+							"sid": 403083101871673,
 							"parameters": {
-								"variable": "bIsShrinked"
+								"variable": "bIsHidden"
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-size",
-							"objectClass": "T_DialogBoxNpatch",
-							"sid": 867448213323718,
-							"parameters": {
-								"width": "DEFAULT_DIALOG_BOX_WIDTH - SHRINK_MODE_X_DIFF",
-								"height": "DEFAULT_DIALOG_BOX_HEIGHT - SHRINK_MODE_HEIGHT_DIFF"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "OBJ_ResizeDialogButton",
-							"sid": 986426889091274,
-							"parameters": {
-								"x": "DEFAULT_RESIZE_BUTTON_POS_X - SHRINK_MODE_X_DIFF",
-								"y": "DEFAULT_RESIZE_BUTTON_POS_Y + SHRINK_MODE_HEIGHT_DIFF"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "OBJ_ResizeDialogButton",
-							"sid": 827807791703414,
-							"parameters": {
-								"opacity": "100"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "T_NextLineButton",
-							"sid": 570218757564091,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 429783094222912,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 729166184868325,
-									"parameters": {
-										"object": "Text",
-										"expression": "Text.TemplateName",
-										"comparison": 0,
-										"value": "\"DialogText\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Text",
-									"sid": 511828386576430,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 302991819235673
-						}
-					]
+					"actions": [],
+					"sid": 552980370093129
 				},
 				{
 					"eventType": "block",
@@ -309,29 +353,53 @@
 						{
 							"id": "else",
 							"objectClass": "System",
-							"sid": 809985542923446
+							"sid": 497579246128504
 						}
 					],
 					"actions": [
 						{
-							"id": "set-position",
-							"objectClass": "OBJ_ResizeDialogButton",
-							"sid": 644593121068495,
+							"id": "set-size",
+							"objectClass": "T_DialogBoxNpatch",
+							"sid": 848996000061195,
 							"parameters": {
-								"x": "DEFAULT_RESIZE_BUTTON_POS_X",
-								"y": "DEFAULT_RESIZE_BUTTON_POS_Y"
+								"width": "DEFAULT_DIALOG_BOX_WIDTH",
+								"height": "DEFAULT_DIALOG_BOX_HEIGHT"
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "T_NextLineButton",
-							"sid": 385299965373173,
+							"id": "set-opacity",
+							"objectClass": "T_DialogBoxNpatch",
+							"sid": 248737870575307,
 							"parameters": {
-								"visibility": "visible"
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "T_DialogButtonNpatch",
+							"sid": 208505525465203,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "T_NextLineButton",
+							"sid": 907677706253577,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "T_ResizeDialogButton",
+							"sid": 311060769470193,
+							"parameters": {
+								"opacity": "100"
 							}
 						}
 					],
-					"sid": 522669329799959,
+					"sid": 686471940137080,
 					"children": [
 						{
 							"eventType": "block",
@@ -339,7 +407,7 @@
 								{
 									"id": "pick-by-comparison",
 									"objectClass": "System",
-									"sid": 821244730600237,
+									"sid": 992588136336927,
 									"parameters": {
 										"object": "Text",
 										"expression": "Text.TemplateName",
@@ -350,15 +418,15 @@
 							],
 							"actions": [
 								{
-									"id": "set-visible",
+									"id": "set-opacity",
 									"objectClass": "Text",
-									"sid": 415087640730404,
+									"sid": 703282382484305,
 									"parameters": {
-										"visibility": "visible"
+										"opacity": "100"
 									}
 								}
 							],
-							"sid": 593310086271390
+							"sid": 741036461170451
 						},
 						{
 							"eventType": "block",
@@ -366,9 +434,9 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 357285489901450,
+									"sid": 300079402416372,
 									"parameters": {
-										"variable": "bIsDisplayingChoices"
+										"variable": "bIsShrinked"
 									}
 								}
 							],
@@ -376,125 +444,66 @@
 								{
 									"id": "set-size",
 									"objectClass": "T_DialogBoxNpatch",
-									"sid": 606866384029930,
+									"sid": 732179158734544,
 									"parameters": {
-										"width": "DEFAULT_DIALOG_BOX_WIDTH",
-										"height": "DEFAULT_DIALOG_BOX_HEIGHT - CHOICE_MODE_HEIGHT_DIFF"
+										"width": "DEFAULT_DIALOG_BOX_WIDTH - SHRINK_MODE_X_DIFF",
+										"height": "DEFAULT_DIALOG_BOX_HEIGHT - SHRINK_MODE_HEIGHT_DIFF"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "OBJ_ResizeDialogButton",
+									"sid": 749780551112355,
+									"parameters": {
+										"x": "DEFAULT_RESIZE_BUTTON_POS_X - SHRINK_MODE_X_DIFF",
+										"y": "DEFAULT_RESIZE_BUTTON_POS_Y + SHRINK_MODE_HEIGHT_DIFF"
 									}
 								},
 								{
 									"id": "set-opacity",
 									"objectClass": "OBJ_ResizeDialogButton",
-									"sid": 246015399022139,
+									"sid": 827415720987903,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "T_NextLineButton",
+									"sid": 151771110021191,
 									"parameters": {
 										"opacity": "0"
 									}
 								}
 							],
-							"sid": 908619353079843,
+							"sid": 943011569413235,
 							"children": [
 								{
-									"eventType": "variable",
-									"name": "total_length",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 379513286665870
-								},
-								{
-									"eventType": "variable",
-									"name": "i",
-									"type": "number",
-									"initialValue": "-1",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 448101886523730
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "for",
+											"id": "pick-by-comparison",
 											"objectClass": "System",
-											"sid": 480836624137116,
+											"sid": 911286533992030,
 											"parameters": {
-												"name": "\"i\"",
-												"start-index": "0",
-												"end-index": "TEST_ChoiceCount-1"
+												"object": "Text",
+												"expression": "Text.TemplateName",
+												"comparison": 0,
+												"value": "\"DialogText\""
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 440130931958828,
+											"id": "set-opacity",
+											"objectClass": "Text",
+											"sid": 343514027234408,
 											"parameters": {
-												"variable": "i",
-												"value": "loopindex(\"i\")"
+												"opacity": "0"
 											}
 										}
 									],
-									"sid": 271123806199677
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 342470893094504,
-											"parameters": {
-												"variable": "total_length",
-												"value": "TEST_ChoiceCount * (CHOICE_BUTTON_PIXEL_WIDTH + CHOICE_BUTTON_PIXEL_SPACING)"
-											}
-										}
-									],
-									"sid": 569948699488621
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for",
-											"objectClass": "System",
-											"sid": 604096476886239,
-											"parameters": {
-												"name": "\"i\"",
-												"start-index": "0",
-												"end-index": "TEST_ChoiceCount-1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 167992264059059,
-											"parameters": {
-												"variable": "i",
-												"value": "loopindex(\"i\")"
-											}
-										},
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 138532890788171,
-											"parameters": {
-												"object-to-create": "T_DialogButtonNpatch",
-												"layer": "\"HUD_Dialogs\"",
-												"x": "CHOICE_BUTTON_INITIAL_PIXEL_OFFSET+(LayoutWidth/2) - (total_length/2) + (i * (CHOICE_BUTTON_PIXEL_WIDTH + CHOICE_BUTTON_PIXEL_SPACING))",
-												"y": "55",
-												"create-hierarchy": true,
-												"template-name": "\"\""
-											}
-										}
-									],
-									"sid": 258691763111003
+									"sid": 986335858915126
 								}
 							]
 						},
@@ -504,29 +513,196 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 665945712846210
+									"sid": 700952933350271
 								}
 							],
 							"actions": [
 								{
-									"id": "set-size",
-									"objectClass": "T_DialogBoxNpatch",
-									"sid": 980392309901560,
+									"id": "set-position",
+									"objectClass": "OBJ_ResizeDialogButton",
+									"sid": 949680472750827,
 									"parameters": {
-										"width": "DEFAULT_DIALOG_BOX_WIDTH",
-										"height": "DEFAULT_DIALOG_BOX_HEIGHT"
+										"x": "DEFAULT_RESIZE_BUTTON_POS_X",
+										"y": "DEFAULT_RESIZE_BUTTON_POS_Y"
 									}
 								},
 								{
 									"id": "set-opacity",
-									"objectClass": "OBJ_ResizeDialogButton",
-									"sid": 764619342931771,
+									"objectClass": "T_NextLineButton",
+									"sid": 146007618000739,
 									"parameters": {
 										"opacity": "100"
 									}
 								}
 							],
-							"sid": 958662225717499
+							"sid": 433284202194959,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 955299756518608,
+											"parameters": {
+												"object": "Text",
+												"expression": "Text.TemplateName",
+												"comparison": 0,
+												"value": "\"DialogText\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "Text",
+											"sid": 381253950679728,
+											"parameters": {
+												"opacity": "100"
+											}
+										}
+									],
+									"sid": 873828225254256
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 862605088439761,
+											"parameters": {
+												"variable": "bIsDisplayingChoices"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "T_DialogBoxNpatch",
+											"sid": 537926352730393,
+											"parameters": {
+												"width": "DEFAULT_DIALOG_BOX_WIDTH",
+												"height": "DEFAULT_DIALOG_BOX_HEIGHT - CHOICE_MODE_HEIGHT_DIFF"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "OBJ_ResizeDialogButton",
+											"sid": 608093790290407,
+											"parameters": {
+												"opacity": "0"
+											}
+										}
+									],
+									"sid": 788418080846901,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "total_length",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 899740540154738
+										},
+										{
+											"eventType": "variable",
+											"name": "i",
+											"type": "number",
+											"initialValue": "-1",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 715060827703691
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 617242945064909,
+													"parameters": {
+														"name": "\"i\"",
+														"start-index": "0",
+														"end-index": "TEST_ChoiceCount-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 932638096186019,
+													"parameters": {
+														"variable": "i",
+														"value": "loopindex(\"i\")"
+													}
+												}
+											],
+											"sid": 920410909109526
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 328797075877966,
+													"parameters": {
+														"variable": "total_length",
+														"value": "TEST_ChoiceCount * (CHOICE_BUTTON_PIXEL_WIDTH + CHOICE_BUTTON_PIXEL_SPACING)"
+													}
+												}
+											],
+											"sid": 749918055287783
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 988128019233640,
+													"parameters": {
+														"name": "\"i\"",
+														"start-index": "0",
+														"end-index": "TEST_ChoiceCount-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 102203022847974,
+													"parameters": {
+														"variable": "i",
+														"value": "loopindex(\"i\")"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 968317599952920,
+													"parameters": {
+														"object-to-create": "T_DialogButtonNpatch",
+														"layer": "\"HUD_Dialogs\"",
+														"x": "CHOICE_BUTTON_INITIAL_PIXEL_OFFSET+(LayoutWidth/2) - (total_length/2) + (i * (CHOICE_BUTTON_PIXEL_WIDTH + CHOICE_BUTTON_PIXEL_SPACING))",
+														"y": "55",
+														"create-hierarchy": true,
+														"template-name": "\"\""
+													}
+												}
+											],
+											"sid": 294551989451687
+										}
+									]
+								}
+							]
 						}
 					]
 				}
@@ -617,7 +793,7 @@
 			]
 		},
 		{
-			"functionName": "RefreshLayoutDialog",
+			"functionName": "ActuateDialogText",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",

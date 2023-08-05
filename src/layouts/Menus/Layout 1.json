@@ -247,8 +247,8 @@
 						"replicasUIDs": null
 					},
 					"world": {
-						"x": 130,
-						"y": 2,
+						"x": -58,
+						"y": 76,
 						"width": 60,
 						"height": 58,
 						"originX": 0,
@@ -504,7 +504,7 @@
 						"replicasUIDs": null
 					},
 					"world": {
-						"x": 2,
+						"x": -62,
 						"y": 4,
 						"width": 60,
 						"height": 58,
@@ -761,8 +761,8 @@
 						"replicasUIDs": null
 					},
 					"world": {
-						"x": 66,
-						"y": 4,
+						"x": -56,
+						"y": 96,
 						"width": 60,
 						"height": 58,
 						"originX": 0,
@@ -1018,8 +1018,8 @@
 						"replicasUIDs": null
 					},
 					"world": {
-						"x": 192,
-						"y": 4,
+						"x": 2,
+						"y": 2,
 						"width": 60,
 						"height": 58,
 						"originX": 0,

@@ -145,7 +145,7 @@
 											"sid": 460516524594405
 										},
 										{
-											"callFunction": "RefreshLayoutDialog",
+											"callFunction": "ActuateDialogText",
 											"sid": 155148995364998
 										}
 									],

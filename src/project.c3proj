@@ -99,6 +99,20 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Pathfinding",
 			"name": "Pathfinding",
 			"author": "Scirra",
@@ -196,7 +210,9 @@
 			"OBJ_CharacterSpawner",
 			"OBJ_Button",
 			"T_ButtonMainMenuBG",
-			"OBJ_Enemy"
+			"OBJ_Enemy",
+			"OBJ_EnemySpawner",
+			"T_EnemyAmygdala"
 		],
 		"subfolders": [
 			{
@@ -283,7 +299,8 @@
 			{
 				"items": [
 					"OBJ_Character",
-					"T_FacelessGhost"
+					"T_FacelessGhost",
+					"T_CharacterExclamationSymbol"
 				],
 				"subfolders": [],
 				"name": "Characters"
@@ -315,12 +332,15 @@
 			"TweenTiledTrait",
 			"FadeTiledTrait",
 			"PutOnEntityLayerGroup",
-			"WidthSineTrait",
+			"WidthWaveTrait",
 			"HorizontalWaveTrait",
 			"BulletTrait",
 			"PutOnFloorStuffLayerGroup",
 			"LineOfSightTrait",
-			"DestroyOutsideLayoutTrait"
+			"DestroyOutsideLayoutTrait",
+			"AngleWaveTrait",
+			"DialogHolderGroup",
+			"FlashTrait"
 		],
 		"subfolders": []
 	},
@@ -371,9 +391,18 @@
 			"eControls",
 			"eVFX",
 			"eDialogs",
-			"eCharacter"
+			"eCharacter",
+			"eEnemy"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"eFade"
+				],
+				"subfolders": [],
+				"name": "Traits"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {
@@ -480,6 +509,14 @@
 					"name": "LayoutStateModel.json",
 					"type": "application/json",
 					"sid": 803876301698361,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "TODO_Art.txt",
+					"type": "text/plain",
+					"sid": 562782569667078,
 					"file-info": {
 						"purpose": "none"
 					}

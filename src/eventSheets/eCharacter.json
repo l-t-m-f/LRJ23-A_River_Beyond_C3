@@ -126,6 +126,76 @@
 			]
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 521174428210456,
+					"parameters": {
+						"object": "OBJ_Character"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 763259510943787,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-los-to-object",
+							"objectClass": "OBJ_Character",
+							"sid": 701594998846459,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "OBJ_PassengerPawn",
+								"image-point": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ActivateCharacterDialog",
+							"sid": 473611802178263
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "OBJ_Character",
+							"sid": 642310109872498,
+							"parameters": {
+								"instance-variable": "bHasSightOfTarget",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 441314190133603
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 124366753750536
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "OBJ_Character",
+							"sid": 618225327224574,
+							"parameters": {
+								"instance-variable": "bHasSightOfTarget",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 949746819261548
+				}
+			]
+		},
+		{
 			"functionName": "SpawnCharacter",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -173,6 +243,67 @@
 				}
 			],
 			"sid": 486026332064256
+		},
+		{
+			"functionName": "ActivateCharacterDialog",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": true,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"callFunction": "GotoToDialogLine",
+					"sid": 981795361711920,
+					"parameters": [
+						"OBJ_Character.CurrentLine"
+					]
+				},
+				{
+					"callFunction": "GotoQuest",
+					"sid": 228593456144162,
+					"parameters": [
+						"OBJ_Character.CurrentQuest"
+					]
+				}
+			],
+			"sid": 214284596831395,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 892572115116515,
+							"parameters": {
+								"variable": "bIsHidden"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ShowDialog",
+							"sid": 789398964300101
+						}
+					],
+					"sid": 335941512332353
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "ActuateDialogText",
+							"sid": 959392791845397
+						}
+					],
+					"sid": 493738043993744
+				}
+			]
 		}
 	],
 	"sid": 378673860315005

@@ -1,0 +1,183 @@
+{
+	"name": "eEnemy",
+	"events": [
+		{
+			"functionName": "SpawnEnemy",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "enemyName",
+					"type": "string",
+					"initialValue": "NULL",
+					"comment": "",
+					"sid": 721957625716079
+				},
+				{
+					"name": "spawnX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 488134052045459
+				},
+				{
+					"name": "spawnY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 929032632470994
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 427462999440056,
+					"parameters": {
+						"object-to-create": "OBJ_Enemy",
+						"layer": "\"DebugEntities\"",
+						"x": "spawnX",
+						"y": "spawnY",
+						"create-hierarchy": true,
+						"template-name": "enemyName"
+					}
+				}
+			],
+			"sid": 180079857341145
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "OBJ_TearProjectile",
+					"sid": 656517605024910,
+					"parameters": {
+						"object": "OBJ_Enemy"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "OBJ_TearProjectile",
+					"sid": 414620671671558,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "Self.Bullet.Speed/2"
+					}
+				}
+			],
+			"sid": 128224205191574,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "OBJ_TearProjectile",
+							"sid": 699262855482821,
+							"parameters": {
+								"child": "T_TearProjectile_type1",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "T_TearProjectile_type1",
+							"sid": 407325776489281,
+							"parameters": {
+								"animation": "\"Splash\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 892098689461138
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "OBJ_Enemy",
+							"sid": 480806751706466,
+							"parameters": {
+								"child": "FlashTrait",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "FlashTrait",
+							"sid": 759355733433401,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "0.5"
+							}
+						}
+					],
+					"sid": 966561905051543
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "T_TearProjectile_type1",
+					"sid": 545603671134696,
+					"parameters": {
+						"animation": "\"Splash\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "OBJ_TearProjectile",
+					"sid": 231848378050189
+				},
+				{
+					"id": "destroy",
+					"objectClass": "OBJ_ProjectileTarget",
+					"sid": 664158647271396
+				}
+			],
+			"sid": 303127618043463
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "OBJ_TearProjectile",
+					"sid": 330761856501998,
+					"parameters": {
+						"object": "OBJ_ProjectileTarget"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "OBJ_ProjectileTarget",
+					"sid": 980638800299974
+				}
+			],
+			"sid": 921586242456030
+		}
+	],
+	"sid": 482638336596035
+}
