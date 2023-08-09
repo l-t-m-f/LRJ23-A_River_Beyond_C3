@@ -701,10 +701,265 @@
 											"sid": 294551989451687
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "RefreshDialogActionIcon",
+											"sid": 897472495236184
+										}
+									],
+									"sid": 795971536826340
 								}
 							]
 						}
 					]
+				}
+			]
+		},
+		{
+			"functionName": "RefreshDialogActionIcon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 301409573922011,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "current_action",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 855222796931052
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 196328388581298,
+							"parameters": {
+								"variable": "current_action",
+								"value": "tokenat(Functions.GetCurrentAction, 0, \"|\")"
+							}
+						}
+					],
+					"sid": 426608971207110
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 511237460992851,
+							"parameters": {
+								"variable": "current_action",
+								"comparison": 0,
+								"value": "\"next_line\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 814370727407904,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "OBJ_NextActionButton",
+									"sid": 338353888549171,
+									"parameters": {
+										"child": "T_NextLineButton",
+										"which": "own"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "T_NextLineButton",
+									"sid": 637290301454338,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "FadeSetAndActivate",
+									"sid": 405582493939124,
+									"parameters": [
+										"T_NextLineButton.UID",
+										"0.5",
+										"Infinity",
+										"0"
+									]
+								}
+							],
+							"sid": 958366759313042
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "OBJ_NextActionButton",
+									"sid": 739281941285923,
+									"parameters": {
+										"child": "T_ClosePanelButton",
+										"which": "own"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "T_ClosePanelButton",
+									"sid": 188159397513812,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "FadeSetAndActivate",
+									"sid": 216657013059707,
+									"parameters": [
+										"T_ClosePanelButton.UID",
+										"0",
+										"0",
+										"0.5"
+									]
+								}
+							],
+							"sid": 379117170967398
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 504004776887718
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 792594505337966,
+							"parameters": {
+								"variable": "current_action",
+								"comparison": 0,
+								"value": "\"next_quest\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 141313618736937,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "OBJ_NextActionButton",
+									"sid": 791673236474471,
+									"parameters": {
+										"child": "T_ClosePanelButton",
+										"which": "own"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "T_ClosePanelButton",
+									"sid": 958364463401701,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "FadeSetAndActivate",
+									"sid": 483871177374363,
+									"parameters": [
+										"T_ClosePanelButton.UID",
+										"0.5",
+										"Infinity",
+										"0"
+									]
+								}
+							],
+							"sid": 620001833861987
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "OBJ_NextActionButton",
+									"sid": 638750142686061,
+									"parameters": {
+										"child": "T_NextLineButton",
+										"which": "own"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "T_NextLineButton",
+									"sid": 892450990901542,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "FadeSetAndActivate",
+									"sid": 723078673737515,
+									"parameters": [
+										"T_NextLineButton.UID",
+										"0",
+										"0",
+										"0.5"
+									]
+								}
+							],
+							"sid": 536916840838841
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "OBJ_NextActionButton",
+							"sid": 772285328231749,
+							"parameters": {
+								"instance-variable": "Action",
+								"value": "current_action"
+							}
+						}
+					],
+					"sid": 124092822737563
 				}
 			]
 		},
@@ -748,6 +1003,14 @@
 					"id": "set-opacity",
 					"objectClass": "T_NextLineButton",
 					"sid": 271579919899534,
+					"parameters": {
+						"opacity": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "T_ClosePanelButton",
+					"sid": 381853724894618,
 					"parameters": {
 						"opacity": "0"
 					}
@@ -803,37 +1066,77 @@
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [],
-			"sid": 121481392698391,
+			"sid": 450650499169746,
 			"children": [
 				{
 					"eventType": "variable",
 					"name": "layouts_key",
 					"type": "string",
-					"initialValue": "layouts",
+					"initialValue": "layouts.",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": true,
-					"sid": 980641041790171
-				},
-				{
-					"eventType": "variable",
-					"name": "lines_key",
-					"type": "string",
-					"initialValue": "lines",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": true,
-					"sid": 602599569184729
+					"sid": 510307379147375
 				},
 				{
 					"eventType": "variable",
 					"name": "name_key",
 					"type": "string",
-					"initialValue": "name",
+					"initialValue": ".name",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": true,
-					"sid": 553395448891331
+					"sid": 617545830951701
+				},
+				{
+					"eventType": "variable",
+					"name": "quests_key",
+					"type": "string",
+					"initialValue": ".quests.",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 536429680817742
+				},
+				{
+					"eventType": "variable",
+					"name": "lines_key",
+					"type": "string",
+					"initialValue": ".lines.",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 705719633581118
+				},
+				{
+					"eventType": "variable",
+					"name": "line_actions_key",
+					"type": "string",
+					"initialValue": ".line_actions.",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 288422683595941
+				},
+				{
+					"eventType": "variable",
+					"name": "action_type_key",
+					"type": "string",
+					"initialValue": ".type",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 884446555976008
+				},
+				{
+					"eventType": "variable",
+					"name": "action_value_key",
+					"type": "string",
+					"initialValue": ".value",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 427648730468932
 				},
 				{
 					"eventType": "variable",
@@ -843,7 +1146,7 @@
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
-					"sid": 807624360353677
+					"sid": 731566398004366
 				},
 				{
 					"eventType": "variable",
@@ -853,7 +1156,17 @@
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
-					"sid": 905719702854463
+					"sid": 429693579859312
+				},
+				{
+					"eventType": "variable",
+					"name": "k",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 844658359406697
 				},
 				{
 					"eventType": "block",
@@ -861,7 +1174,7 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 229503348765049,
+							"sid": 935628651123531,
 							"parameters": {
 								"name": "\"i\"",
 								"start-index": "0",
@@ -873,14 +1186,14 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 800676582541898,
+							"sid": 224308179172818,
 							"parameters": {
 								"variable": "i",
 								"value": "loopindex(\"i\")"
 							}
 						}
 					],
-					"sid": 323687107115026,
+					"sid": 191467939751672,
 					"children": [
 						{
 							"eventType": "block",
@@ -888,16 +1201,16 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 843778241729670,
+									"sid": 779485220549100,
 									"parameters": {
-										"first-value": "Texts.Get(layouts_key&\".\"&i&\".\"&name_key)",
+										"first-value": "Texts.Get(layouts_key&i&name_key)",
 										"comparison": 0,
 										"second-value": "LayoutName"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 886622066227018,
+							"sid": 211462908174471,
 							"children": [
 								{
 									"eventType": "block",
@@ -905,11 +1218,11 @@
 										{
 											"id": "for",
 											"objectClass": "System",
-											"sid": 279765334388324,
+											"sid": 798421558840632,
 											"parameters": {
 												"name": "\"j\"",
 												"start-index": "0",
-												"end-index": "Texts.ArraySize(layouts_key&\".\"&i&\".\"&lines_key)-1"
+												"end-index": "Texts.ArraySize(layouts_key&i&quests_key)-1"
 											}
 										}
 									],
@@ -917,14 +1230,14 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 105785109558947,
+											"sid": 712791979920298,
 											"parameters": {
 												"variable": "j",
 												"value": "loopindex(\"j\")"
 											}
 										}
 									],
-									"sid": 215824028722011,
+									"sid": 755334811927180,
 									"children": [
 										{
 											"eventType": "block",
@@ -932,25 +1245,339 @@
 												{
 													"id": "compare-eventvar",
 													"objectClass": "System",
-													"sid": 817510116343250,
+													"sid": 917326527654576,
 													"parameters": {
 														"variable": "j",
 														"comparison": 0,
-														"value": "CurrentLayoutDialogLine"
+														"value": "CurrentLayoutDialogQuest"
 													}
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 787304230452881,
+											"children": [
 												{
-													"id": "set-text",
-													"objectClass": "Text",
-													"sid": 173336282121881,
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for",
+															"objectClass": "System",
+															"sid": 837295319442842,
+															"parameters": {
+																"name": "\"k\"",
+																"start-index": "0",
+																"end-index": "Texts.ArraySize(layouts_key&i&quests_key&j&lines_key)-1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 778660990355537,
+															"parameters": {
+																"variable": "k",
+																"value": "loopindex(\"k\")"
+															}
+														}
+													],
+													"sid": 462656402525939,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 294317326725448,
+																	"parameters": {
+																		"variable": "k",
+																		"comparison": 0,
+																		"value": "CurrentLayoutDialogLine"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-text",
+																	"objectClass": "Text",
+																	"sid": 845321470448138,
+																	"parameters": {
+																		"text": "Texts.Get(layouts_key&i&quests_key&j&lines_key&k)"
+																	}
+																}
+															],
+															"sid": 293715809889261
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "GetCurrentAction",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 552222397398297,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "layouts_key",
+					"type": "string",
+					"initialValue": "layouts.",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 495354241049103
+				},
+				{
+					"eventType": "variable",
+					"name": "name_key",
+					"type": "string",
+					"initialValue": ".name",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 336031475508031
+				},
+				{
+					"eventType": "variable",
+					"name": "quests_key",
+					"type": "string",
+					"initialValue": ".quests.",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 974549801697327
+				},
+				{
+					"eventType": "variable",
+					"name": "lines_key",
+					"type": "string",
+					"initialValue": ".lines.",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 941566863520233
+				},
+				{
+					"eventType": "variable",
+					"name": "line_actions_key",
+					"type": "string",
+					"initialValue": ".line_actions.",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 810990927568478
+				},
+				{
+					"eventType": "variable",
+					"name": "action_type_key",
+					"type": "string",
+					"initialValue": ".type",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 872603523653689
+				},
+				{
+					"eventType": "variable",
+					"name": "action_value_key",
+					"type": "string",
+					"initialValue": ".value",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 854952394093830
+				},
+				{
+					"eventType": "variable",
+					"name": "i",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 778164845418330
+				},
+				{
+					"eventType": "variable",
+					"name": "j",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 328899740503594
+				},
+				{
+					"eventType": "variable",
+					"name": "k",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 659227511912982
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 794401832281130,
+							"parameters": {
+								"name": "\"i\"",
+								"start-index": "0",
+								"end-index": "Texts.ArraySize(layouts_key)-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 117174260303453,
+							"parameters": {
+								"variable": "i",
+								"value": "loopindex(\"i\")"
+							}
+						}
+					],
+					"sid": 651073776653840,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 474685307262285,
+									"parameters": {
+										"first-value": "Texts.Get(layouts_key&i&name_key)",
+										"comparison": 0,
+										"second-value": "LayoutName"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 271617845560133,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 617011406323678,
+											"parameters": {
+												"name": "\"j\"",
+												"start-index": "0",
+												"end-index": "Texts.ArraySize(layouts_key&i&quests_key)-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 498195772746071,
+											"parameters": {
+												"variable": "j",
+												"value": "loopindex(\"j\")"
+											}
+										}
+									],
+									"sid": 966181068332181,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 854830425704924,
 													"parameters": {
-														"text": "Texts.Get(layouts_key&\".\"&i&\".\"&lines_key&\".\"&j)"
+														"variable": "j",
+														"comparison": 0,
+														"value": "CurrentLayoutDialogQuest"
 													}
 												}
 											],
-											"sid": 795911124175227
+											"actions": [],
+											"sid": 232171462798602,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for",
+															"objectClass": "System",
+															"sid": 717884146632938,
+															"parameters": {
+																"name": "\"k\"",
+																"start-index": "0",
+																"end-index": "Texts.ArraySize(layouts_key&i&quests_key&j&lines_key)-1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 361610184899588,
+															"parameters": {
+																"variable": "k",
+																"value": "loopindex(\"k\")"
+															}
+														}
+													],
+													"sid": 702666011447933,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 884873423231620,
+																	"parameters": {
+																		"variable": "k",
+																		"comparison": 0,
+																		"value": "CurrentLayoutDialogLine"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 278989034363350,
+																	"parameters": {
+																		"value": "Texts.Get(layouts_key&i&quests_key&j&line_actions_key&k&action_type_key)|Texts.Get(layouts_key&i&quests_key&j&line_actions_key&k&action_value_key)"
+																	}
+																}
+															],
+															"sid": 587249879416442
+														}
+													]
+												}
+											]
 										}
 									]
 								}
@@ -1015,37 +1642,14 @@
 					}
 				},
 				{
-					"id": "set-fade-in-time",
-					"objectClass": "T_ResizeDialogButton",
-					"sid": 327728774487595,
-					"behaviorType": "Fade",
-					"parameters": {
-						"fade-in-time": "0"
-					}
-				},
-				{
-					"id": "set-wait-time",
-					"objectClass": "T_ResizeDialogButton",
-					"sid": 556392483538342,
-					"behaviorType": "Fade",
-					"parameters": {
-						"wait-time": "0"
-					}
-				},
-				{
-					"id": "set-fade-out-time",
-					"objectClass": "T_ResizeDialogButton",
-					"sid": 682165633042878,
-					"behaviorType": "Fade",
-					"parameters": {
-						"fade-out-time": ".25"
-					}
-				},
-				{
-					"id": "restart-fade",
-					"objectClass": "T_ResizeDialogButton",
-					"sid": 923001000653970,
-					"behaviorType": "Fade"
+					"callFunction": "FadeSetAndActivate",
+					"sid": 166593049341080,
+					"parameters": [
+						"T_ResizeDialogButton.UID",
+						"0",
+						"0",
+						".25"
+					]
 				}
 			],
 			"sid": 367392843156606,
@@ -1215,37 +1819,14 @@
 					"sid": 434875580700372
 				},
 				{
-					"id": "set-fade-in-time",
-					"objectClass": "T_ResizeDialogButton",
-					"sid": 558928288756337,
-					"behaviorType": "Fade",
-					"parameters": {
-						"fade-in-time": ".5"
-					}
-				},
-				{
-					"id": "set-wait-time",
-					"objectClass": "T_ResizeDialogButton",
-					"sid": 658770121271816,
-					"behaviorType": "Fade",
-					"parameters": {
-						"wait-time": "Infinity"
-					}
-				},
-				{
-					"id": "set-fade-out-time",
-					"objectClass": "T_ResizeDialogButton",
-					"sid": 238378184237917,
-					"behaviorType": "Fade",
-					"parameters": {
-						"fade-out-time": "0"
-					}
-				},
-				{
-					"id": "restart-fade",
-					"objectClass": "T_ResizeDialogButton",
-					"sid": 559354355875096,
-					"behaviorType": "Fade"
+					"callFunction": "FadeSetAndActivate",
+					"sid": 546325705969958,
+					"parameters": [
+						"T_ResizeDialogButton.UID",
+						".5",
+						"Infinity",
+						"0"
+					]
 				}
 			],
 			"sid": 912583450878937
@@ -1345,43 +1926,71 @@
 					"parameters": {
 						"frame-number": "1"
 					}
-				},
-				{
-					"id": "set-fade-in-time",
-					"objectClass": "T_NextLineButton",
-					"sid": 339897941922685,
-					"behaviorType": "Fade",
-					"parameters": {
-						"fade-in-time": "0"
-					}
-				},
-				{
-					"id": "set-wait-time",
-					"objectClass": "T_NextLineButton",
-					"sid": 889928962739535,
-					"behaviorType": "Fade",
-					"parameters": {
-						"wait-time": "0"
-					}
-				},
-				{
-					"id": "set-fade-out-time",
-					"objectClass": "T_NextLineButton",
-					"sid": 103322478809411,
-					"behaviorType": "Fade",
-					"parameters": {
-						"fade-out-time": ".25"
-					}
-				},
-				{
-					"id": "restart-fade",
-					"objectClass": "T_NextLineButton",
-					"sid": 629917307212011,
-					"behaviorType": "Fade"
 				}
 			],
 			"sid": 705321086743849,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "OBJ_NextActionButton",
+							"sid": 175038763997630,
+							"parameters": {
+								"instance-variable": "Action",
+								"comparison": 0,
+								"value": "\"next_line\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "FadeSetAndActivate",
+							"sid": 349243156955088,
+							"parameters": [
+								"T_NextLineButton.UID",
+								"0",
+								"0",
+								".25"
+							]
+						}
+					],
+					"sid": 487751671953163
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 385956698586283
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "OBJ_NextActionButton",
+							"sid": 925922191612201,
+							"parameters": {
+								"instance-variable": "Action",
+								"comparison": 0,
+								"value": "\"next_quest\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "FadeSetAndActivate",
+							"sid": 531389848281793,
+							"parameters": [
+								"T_ClosePanelButton.UID",
+								"0",
+								"0",
+								".25"
+							]
+						}
+					],
+					"sid": 996338486797440
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -1531,43 +2140,71 @@
 					"parameters": {
 						"frame-number": "0"
 					}
-				},
-				{
-					"id": "set-fade-in-time",
-					"objectClass": "T_NextLineButton",
-					"sid": 661809887143524,
-					"behaviorType": "Fade",
-					"parameters": {
-						"fade-in-time": ".5"
-					}
-				},
-				{
-					"id": "set-wait-time",
-					"objectClass": "T_NextLineButton",
-					"sid": 429321329105667,
-					"behaviorType": "Fade",
-					"parameters": {
-						"wait-time": "Infinity"
-					}
-				},
-				{
-					"id": "set-fade-out-time",
-					"objectClass": "T_NextLineButton",
-					"sid": 125725278951630,
-					"behaviorType": "Fade",
-					"parameters": {
-						"fade-out-time": "0"
-					}
-				},
-				{
-					"id": "restart-fade",
-					"objectClass": "T_NextLineButton",
-					"sid": 376057251046681,
-					"behaviorType": "Fade"
 				}
 			],
 			"sid": 451898414759041,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "OBJ_NextActionButton",
+							"sid": 387524301764867,
+							"parameters": {
+								"instance-variable": "Action",
+								"comparison": 0,
+								"value": "\"next_line\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "FadeSetAndActivate",
+							"sid": 792714482930138,
+							"parameters": [
+								"T_NextLineButton.UID",
+								".5",
+								"Infinity",
+								"0"
+							]
+						}
+					],
+					"sid": 778996386831138
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 761866879189750
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "OBJ_NextActionButton",
+							"sid": 483757896073801,
+							"parameters": {
+								"instance-variable": "Action",
+								"comparison": 0,
+								"value": "\"next_quest\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "FadeSetAndActivate",
+							"sid": 653964996470321,
+							"parameters": [
+								"T_ClosePanelButton.UID",
+								".5",
+								"Infinity",
+								"0"
+							]
+						}
+					],
+					"sid": 347928366296578
+				},
 				{
 					"eventType": "block",
 					"conditions": [

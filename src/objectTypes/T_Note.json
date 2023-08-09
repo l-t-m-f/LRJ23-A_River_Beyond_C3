@@ -1,7 +1,7 @@
 {
-	"name": "OBJ_NextLineButton",
+	"name": "T_Note",
 	"plugin-id": "Sprite",
-	"sid": 476832549979302,
+	"sid": 247390644666479,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,19 +11,26 @@
 			{
 				"frames": [
 					{
-						"width": 6,
+						"width": 4,
 						"height": 3,
-						"originX": 0,
+						"originX": 1,
 						"originY": 0,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8437565,
+						"imageSpriteId": 376165,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "YasZ",
+								"x": 0.5,
+								"y": 1.6666666666666667
+							}
+						],
 						"duration": 1
 					}
 				],
-				"sid": 188776648004612,
+				"sid": 109715611143402,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

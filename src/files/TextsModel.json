@@ -1,18 +1,65 @@
 {
-	"layouts" : [
-	
-	{
-	
-		"name" : "Arrival",
-		"lines" : [
-		
-			"Thou   art   dead...",
-			"Yes,   it's   unfortunate."
-		
-		]
-	
-	}
-	
-	
+	"layouts": [
+		{
+			"name": "Arrival",
+			"quests": [
+				{
+					"lines": [
+						"Thou   art   dead...",
+						"Yes,   it's   unfortunate.",
+						"Venture North, \nMaster awaits..."
+					],
+					"line_actions": [
+						{
+							"type": "next_line"
+						},
+						{
+							"type": "next_line"
+						},
+						{
+							"type": "next_quest"
+						}
+					]
+				},
+				{
+					"lines": [
+						"*You notice an additional scribble:*",
+						"Three Souls... Collect..."
+					],
+					"line_actions": [
+						{
+							"type": "next_line"
+						},
+						{
+							"type": "goto_quest",
+							"value": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Core",
+			"quests": [
+				{
+					"lines": [
+						"Oy! I'm the ghast of Misfortunes...",
+						"Northeast for pain, southeast for tears.",
+						"Westward for everything in between!"
+					],
+					"line_actions": [
+						{
+							"type": "next_line"
+						},
+						{
+							"type": "next_line"
+						},
+						{
+							"type": "next_quest"
+						}
+					]
+				}
+			]
+		}
 	]
 }

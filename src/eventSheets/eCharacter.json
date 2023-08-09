@@ -5,18 +5,55 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 976791100118506
+				}
+			],
+			"actions": [],
+			"sid": 969406271614277,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 182850953003266,
+							"parameters": {
+								"object": "YasZ",
+								"expression": "YasZ.ImagePointY(\"YasZ\")",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-top",
+							"objectClass": "YasZ",
+							"sid": 252967693123697
+						}
+					],
+					"sid": 107930807709787
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-created",
-					"objectClass": "PutOnEntityLayerGroup",
+					"objectClass": "YasZ",
 					"sid": 889007378393059
 				}
 			],
 			"actions": [
 				{
 					"id": "move-to-layer",
-					"objectClass": "PutOnEntityLayerGroup",
-					"sid": 604265551002542,
+					"objectClass": "YasZ",
+					"sid": 615404332370807,
 					"parameters": {
-						"layer": "\"Entities\""
+						"layer": "\"YasZ\""
 					}
 				}
 			],
@@ -27,7 +64,7 @@
 					"conditions": [
 						{
 							"id": "is-boolean-instance-variable-set",
-							"objectClass": "PutOnEntityLayerGroup",
+							"objectClass": "YasZ",
 							"sid": 590353490041158,
 							"parameters": {
 								"instance-variable": "bShouldBePutOnTop"
@@ -37,7 +74,7 @@
 					"actions": [
 						{
 							"id": "move-to-top",
-							"objectClass": "PutOnEntityLayerGroup",
+							"objectClass": "YasZ",
 							"sid": 646331260179327
 						}
 					],
@@ -55,7 +92,7 @@
 					"actions": [
 						{
 							"id": "move-to-bottom",
-							"objectClass": "PutOnEntityLayerGroup",
+							"objectClass": "YasZ",
 							"sid": 590423003387810
 						}
 					],
@@ -68,14 +105,40 @@
 			"conditions": [
 				{
 					"id": "on-created",
-					"objectClass": "PutOnFloorStuffLayerGroup",
+					"objectClass": "Atop",
+					"sid": 176846840511157
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "Atop",
+					"sid": 778810988806239,
+					"parameters": {
+						"layer": "\"Atop\""
+					}
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "Atop",
+					"sid": 895610725111540
+				}
+			],
+			"sid": 421242874900286
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "FloorStuff",
 					"sid": 859063422774099
 				}
 			],
 			"actions": [
 				{
 					"id": "move-to-layer",
-					"objectClass": "PutOnFloorStuffLayerGroup",
+					"objectClass": "FloorStuff",
 					"sid": 256718498692253,
 					"parameters": {
 						"layer": "\"FloorStuff\""
@@ -89,7 +152,7 @@
 					"conditions": [
 						{
 							"id": "is-boolean-instance-variable-set",
-							"objectClass": "PutOnFloorStuffLayerGroup",
+							"objectClass": "FloorStuff",
 							"sid": 260334613200624,
 							"parameters": {
 								"instance-variable": "bShouldBePutOnTop"
@@ -99,7 +162,7 @@
 					"actions": [
 						{
 							"id": "move-to-top",
-							"objectClass": "PutOnFloorStuffLayerGroup",
+							"objectClass": "FloorStuff",
 							"sid": 765040447810926
 						}
 					],
@@ -117,7 +180,7 @@
 					"actions": [
 						{
 							"id": "move-to-bottom",
-							"objectClass": "PutOnFloorStuffLayerGroup",
+							"objectClass": "FloorStuff",
 							"sid": 980206647630383
 						}
 					],
@@ -135,6 +198,15 @@
 					"parameters": {
 						"object": "OBJ_Character"
 					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "OBJ_Character",
+					"sid": 774757392625155,
+					"parameters": {
+						"instance-variable": "bIsDialoguing"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [],
@@ -187,6 +259,15 @@
 							"sid": 618225327224574,
 							"parameters": {
 								"instance-variable": "bHasSightOfTarget",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "OBJ_Character",
+							"sid": 733857429088569,
+							"parameters": {
+								"instance-variable": "bIsDialoguing",
 								"value": "false"
 							}
 						}
@@ -256,6 +337,15 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "set-boolean-instvar",
+					"objectClass": "OBJ_Character",
+					"sid": 131946389725797,
+					"parameters": {
+						"instance-variable": "bIsDialoguing",
+						"value": "true"
+					}
+				},
+				{
 					"callFunction": "GotoToDialogLine",
 					"sid": 981795361711920,
 					"parameters": [
@@ -298,7 +388,7 @@
 					"actions": [
 						{
 							"callFunction": "ActuateDialogText",
-							"sid": 959392791845397
+							"sid": 883322383137173
 						}
 					],
 					"sid": 493738043993744

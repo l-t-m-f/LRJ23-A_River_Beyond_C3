@@ -227,53 +227,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-created",
-					"objectClass": "OBJ_PassengerPawn",
-					"sid": 625352767453475
-				},
-				{
-					"id": "pick-children",
-					"objectClass": "OBJ_PassengerPawn",
-					"sid": 764403430916013,
-					"parameters": {
-						"child": "T_PassengerPawn",
-						"which": "own"
-					}
-				},
-				{
-					"id": "pick-children",
-					"objectClass": "OBJ_PassengerPawn",
-					"sid": 587455809489007,
-					"parameters": {
-						"child": "T_EntityShadow",
-						"which": "own"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "move-to-layer",
-					"objectClass": "T_PassengerPawn",
-					"sid": 520930559181887,
-					"parameters": {
-						"layer": "\"Entities\""
-					}
-				},
-				{
-					"id": "move-to-layer",
-					"objectClass": "T_EntityShadow",
-					"sid": 735865826144099,
-					"parameters": {
-						"layer": "\"Entities\""
-					}
-				}
-			],
-			"sid": 630128848712019
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "is-overlapping-another-object",
 					"objectClass": "OBJ_PassengerPawn",
 					"sid": 246690005297847,

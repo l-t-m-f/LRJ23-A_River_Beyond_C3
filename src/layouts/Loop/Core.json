@@ -87,7 +87,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 0,
+						"x": 3,
 						"y": 44,
 						"width": 6,
 						"height": 6,
@@ -145,7 +145,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 64,
+						"x": 61,
 						"y": 20,
 						"width": 6,
 						"height": 6,
@@ -253,11 +253,110 @@
 			"global": false
 		},
 		{
+			"name": "ColorMap",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 740277146414708,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "FloorStuff",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
 			"sid": 779040719032194,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "DebugMap",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 845505057260003,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "YasZ",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 229392235943983,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -340,7 +439,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 0,
+						"x": 3,
 						"y": 44,
 						"width": 6,
 						"height": 6,
@@ -406,7 +505,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 64,
+						"x": 61,
 						"y": 20,
 						"width": 6,
 						"height": 6,
@@ -516,11 +615,11 @@
 			"global": false
 		},
 		{
-			"name": "Entities",
+			"name": "Atop",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 229392235943983,
+			"sid": 816583936611244,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -695,19 +794,19 @@
 			"global": false
 		},
 		{
-			"name": "HUD_DEBUG",
+			"name": "HUD_Main",
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 388542112968988,
+			"sid": 388345043811916,
 			"effectTypes": [],
-			"isInitiallyVisible": false,
+			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
 			"color": [
 				1,
 				1,
 				1,
-				0.25
+				1
 			],
 			"backgroundColor": [
 				1,
@@ -728,19 +827,19 @@
 			"global": false
 		},
 		{
-			"name": "HUD_Main",
+			"name": "HUD_DEBUG",
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 388345043811916,
+			"sid": 388542112968988,
 			"effectTypes": [],
-			"isInitiallyVisible": true,
+			"isInitiallyVisible": false,
 			"isInitiallyInteractive": true,
 			"color": [
 				1,
 				1,
 				1,
-				1
+				0.25
 			],
 			"backgroundColor": [
 				1,

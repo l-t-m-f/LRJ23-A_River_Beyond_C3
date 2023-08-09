@@ -229,8 +229,8 @@
 							1
 						],
 						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "character",
+						"vertical-alignment": "top",
+						"wrapping": "word",
 						"initially-visible": true,
 						"origin": "top-left",
 						"read-aloud": false
@@ -456,7 +456,7 @@
 						"x": 6,
 						"y": 46,
 						"width": 52,
-						"height": 12,
+						"height": 17,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -618,6 +618,88 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "T_ClosePanelButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 106,
+					"instanceVariables": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 0,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 1,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0.1,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 44,
+						"uid": 106,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 51,
+						"y": 55,
+						"width": 5,
+						"height": 5,
+						"originX": 0.3,
+						"originY": 0.2,
+						"color": [
+							0.796078431372549,
+							0.24705882352941178,
+							0.8352941176470589,
+							0
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 934860358049599,
@@ -734,7 +816,7 @@
 					}
 				},
 				{
-					"type": "OBJ_NextLineButton",
+					"type": "OBJ_NextActionButton",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -743,7 +825,9 @@
 						"live-preview": false
 					},
 					"uid": 44,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Action": ""
+					},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": null,
@@ -751,6 +835,21 @@
 						"children": [
 							{
 								"uid": 38,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 106,
 								"flags": {
 									"x": true,
 									"y": true,

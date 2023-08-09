@@ -92,16 +92,6 @@
 					}
 				},
 				{
-					"callFunction": "ShowDialog",
-					"sid": 439131746749166,
-					"disabled": true
-				},
-				{
-					"callFunction": "ActuateDialogText",
-					"sid": 261350686823814,
-					"disabled": true
-				},
-				{
 					"callFunction": "HideDialog",
 					"sid": 957966060980482
 				}
@@ -195,9 +185,9 @@
 					"actions": [
 						{
 							"callFunction": "SpawnEnemy",
-							"sid": 276212188046570,
+							"sid": 134617078982951,
 							"parameters": [
-								"\"Amygdala\"",
+								"OBJ_EnemySpawner.Enemy",
 								"OBJ_EnemySpawner.X",
 								"OBJ_EnemySpawner.Y"
 							]

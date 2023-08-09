@@ -26,6 +26,13 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2970978,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "YasZ",
+								"x": 0.5,
+								"y": 1
+							}
+						],
 						"duration": 1
 					},
 					{
@@ -38,6 +45,13 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2781509,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "YasZ",
+								"x": 0.5,
+								"y": 1
+							}
+						],
 						"duration": 1
 					},
 					{
@@ -50,6 +64,13 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 4697439,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "YasZ",
+								"x": 0.5,
+								"y": 1
+							}
+						],
 						"duration": 1
 					}
 				],

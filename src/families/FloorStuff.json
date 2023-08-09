@@ -1,22 +1,21 @@
 {
-	"name": "PutOnEntityLayerGroup",
+	"name": "FloorStuff",
 	"plugin-id": "Sprite",
-	"sid": 853306271577769,
+	"sid": 233475951125679,
 	"instanceVariables": [
 		{
 			"name": "bShouldBePutOnTop",
 			"type": "boolean",
 			"desc": "",
 			"show": true,
-			"sid": 988153667567956
+			"sid": 629207368449358
 		}
 	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"T_FacelessGhost",
-		"T_TearProjectile_type1",
-		"T_CharacterExclamationSymbol",
-		"T_EnemyAmygdala"
+		"T_MoveTargetVFX",
+		"T_ProjectileTarget",
+		"T_EntityShadow"
 	]
 }

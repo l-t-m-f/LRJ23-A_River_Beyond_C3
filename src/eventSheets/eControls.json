@@ -125,31 +125,71 @@
 											"objectClass": "Mouse",
 											"sid": 566039968388014,
 											"parameters": {
-												"object": "OBJ_NextLineButton"
+												"object": "OBJ_NextActionButton"
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 492211634538627,
+									"children": [
 										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 614530057774664,
-											"disabled": true,
-											"parameters": {
-												"variable": "CurrentLayoutDialogLine",
-												"value": "1"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "OBJ_NextActionButton",
+													"sid": 937028809814080,
+													"parameters": {
+														"instance-variable": "Action",
+														"comparison": 0,
+														"value": "\"next_line\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "MoveUpNextLine",
+													"sid": 450904100194095
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 320887437361433
+												},
+												{
+													"callFunction": "ActuateDialogText",
+													"sid": 714378256420704
+												},
+												{
+													"callFunction": "RefreshDialogActionIcon",
+													"sid": 433537932280977
+												}
+											],
+											"sid": 551614505805298
 										},
 										{
-											"callFunction": "MoveUpNextLine",
-											"sid": 460516524594405
-										},
-										{
-											"callFunction": "ActuateDialogText",
-											"sid": 155148995364998
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "OBJ_NextActionButton",
+													"sid": 392466481356726,
+													"parameters": {
+														"instance-variable": "Action",
+														"comparison": 0,
+														"value": "\"next_quest\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "HideDialog",
+													"sid": 890620115901731
+												}
+											],
+											"sid": 483533705692257
 										}
-									],
-									"sid": 492211634538627
+									]
 								}
 							]
 						}
@@ -300,7 +340,7 @@
 			"functionCategory": "",
 			"functionReturnType": "none",
 			"functionCopyPicked": false,
-			"functionIsAsync": false,
+			"functionIsAsync": true,
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
@@ -356,6 +396,11 @@
 										"variable": "CurrentLayoutDialogLine",
 										"value": "int(DAT_LayoutState.At(DAT_LayoutState.CurX, 1))"
 									}
+								},
+								{
+									"id": "stop-loop",
+									"objectClass": "System",
+									"sid": 391200643487781
 								}
 							],
 							"sid": 913517581169273

@@ -16,6 +16,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 144991943566955
+		},
+		{
+			"name": "bIsDialoguing",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 399572985705084
 		}
 	],
 	"behaviorTypes": [],

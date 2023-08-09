@@ -14,6 +14,7 @@
 	"members": [
 		"T_ParticleFlake_type1",
 		"T_ResizeDialogButton",
-		"T_NextLineButton"
+		"T_NextLineButton",
+		"T_ClosePanelButton"
 	]
 }

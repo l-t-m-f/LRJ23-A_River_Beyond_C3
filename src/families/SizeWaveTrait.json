@@ -12,6 +12,7 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"T_ParticleFlake_type1"
+		"T_ParticleFlake_type1",
+		"T_ClosePanelButton"
 	]
 }

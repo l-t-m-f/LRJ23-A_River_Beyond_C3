@@ -13,6 +13,7 @@
 	"effectTypes": [],
 	"members": [
 		"T_CharacterExclamationSymbol",
-		"T_EnemyAmygdala"
+		"T_EnemyAmygdala",
+		"T_Note"
 	]
 }

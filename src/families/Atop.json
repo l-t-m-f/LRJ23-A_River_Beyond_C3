@@ -1,0 +1,11 @@
+{
+	"name": "Atop",
+	"plugin-id": "Sprite",
+	"sid": 682901874835738,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"T_CharacterExclamationSymbol"
+	]
+}

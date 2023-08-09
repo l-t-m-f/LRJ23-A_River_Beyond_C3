@@ -1,0 +1,26 @@
+{
+	"name": "YasZ",
+	"plugin-id": "Sprite",
+	"sid": 853306271577769,
+	"instanceVariables": [
+		{
+			"name": "bShouldBePutOnTop",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 988153667567956
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"T_FacelessGhost",
+		"T_TearProjectile_type1",
+		"T_CharacterExclamationSymbol",
+		"T_EnemyAmygdala",
+		"T_PassengerPawn",
+		"T_Gravestone",
+		"T_Note",
+		"T_Dummy"
+	]
+}

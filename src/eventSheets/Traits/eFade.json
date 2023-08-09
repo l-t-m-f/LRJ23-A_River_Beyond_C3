@@ -66,21 +66,21 @@
 							}
 						},
 						{
-							"id": "set-fade-in-time",
+							"id": "set-wait-time",
 							"objectClass": "FadeTrait",
-							"sid": 925965725734168,
+							"sid": 181604045232470,
 							"behaviorType": "Fade",
 							"parameters": {
-								"fade-in-time": "waitDuration"
+								"wait-time": "waitDuration"
 							}
 						},
 						{
-							"id": "set-fade-in-time",
+							"id": "set-fade-out-time",
 							"objectClass": "FadeTrait",
-							"sid": 635527296290393,
+							"sid": 841783910242098,
 							"behaviorType": "Fade",
 							"parameters": {
-								"fade-in-time": "fadeOutDuration"
+								"fade-out-time": "fadeOutDuration"
 							}
 						}
 					],
@@ -196,9 +196,9 @@
 			"actions": [
 				{
 					"callFunction": "FadeSet",
-					"sid": 637060793185751,
+					"sid": 388399521853670,
 					"parameters": [
-						"-1",
+						"traitOwnerUID",
 						"fadeInDuration",
 						"waitDuration",
 						"fadeOutDuration"
@@ -206,9 +206,9 @@
 				},
 				{
 					"callFunction": "FadeActivate",
-					"sid": 890209706990462,
+					"sid": 798297046001218,
 					"parameters": [
-						"-1"
+						"traitOwnerUID"
 					]
 				}
 			],

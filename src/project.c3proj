@@ -176,6 +176,13 @@
 		},
 		{
 			"type": "effect",
+			"id": "satblend",
+			"name": "Saturation",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "screen",
 			"name": "Screen",
 			"author": "Scirra",
@@ -212,7 +219,11 @@
 			"T_ButtonMainMenuBG",
 			"OBJ_Enemy",
 			"OBJ_EnemySpawner",
-			"T_EnemyAmygdala"
+			"T_EnemyAmygdala",
+			"T_Godray",
+			"Grid",
+			"T_Note",
+			"T_Dummy"
 		],
 		"subfolders": [
 			{
@@ -257,10 +268,11 @@
 					"T_DialogBoxNpatch",
 					"T_DialogButtonNpatch",
 					"OBJ_ResizeDialogButton",
-					"OBJ_NextLineButton",
+					"OBJ_NextActionButton",
 					"T_NextLineButton",
 					"T_ResizeDialogButton",
-					"DAT_LayoutState"
+					"DAT_LayoutState",
+					"T_ClosePanelButton"
 				],
 				"subfolders": [],
 				"name": "Dialogs"
@@ -331,16 +343,17 @@
 			"TweenTrait",
 			"TweenTiledTrait",
 			"FadeTiledTrait",
-			"PutOnEntityLayerGroup",
+			"YasZ",
 			"WidthWaveTrait",
 			"HorizontalWaveTrait",
 			"BulletTrait",
-			"PutOnFloorStuffLayerGroup",
+			"FloorStuff",
 			"LineOfSightTrait",
 			"DestroyOutsideLayoutTrait",
 			"AngleWaveTrait",
 			"DialogHolderGroup",
-			"FlashTrait"
+			"FlashTrait",
+			"Atop"
 		],
 		"subfolders": []
 	},

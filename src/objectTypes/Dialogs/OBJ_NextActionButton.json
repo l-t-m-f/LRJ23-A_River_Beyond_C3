@@ -1,0 +1,45 @@
+{
+	"name": "OBJ_NextActionButton",
+	"plugin-id": "Sprite",
+	"sid": 476832549979302,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Action",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 131308148056084
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 6,
+						"height": 3,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8437565,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 188776648004612,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
