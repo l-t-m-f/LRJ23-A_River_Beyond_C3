@@ -1,0 +1,45 @@
+{
+	"name": "OBJ_PlayerBoatMoveNode",
+	"plugin-id": "Sprite",
+	"sid": 109787836891588,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "NodeID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 798406325917530
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 4,
+						"height": 4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5564674,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 761894926706937,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

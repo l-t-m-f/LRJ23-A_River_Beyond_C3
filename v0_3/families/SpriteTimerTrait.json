@@ -1,0 +1,17 @@
+{
+	"name": "SpriteTimerTrait",
+	"plugin-id": "Sprite",
+	"sid": 705596211852815,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 409094848032808
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_PlayerBoatBase"
+	]
+}

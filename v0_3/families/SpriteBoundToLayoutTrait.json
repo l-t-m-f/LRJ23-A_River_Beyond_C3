@@ -1,0 +1,17 @@
+{
+	"name": "SpriteBoundToLayoutTrait",
+	"plugin-id": "Sprite",
+	"sid": 346460722344165,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 912590880936480
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_PlayerBoatBase"
+	]
+}

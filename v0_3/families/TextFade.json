@@ -1,0 +1,17 @@
+{
+	"name": "TextFade",
+	"plugin-id": "Text",
+	"sid": 115348390560272,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 822821951798834
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Text"
+	]
+}

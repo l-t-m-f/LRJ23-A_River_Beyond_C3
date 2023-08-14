@@ -1,0 +1,519 @@
+{
+	"name": "ePassenger",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "PassengeraSpawnX",
+			"type": "number",
+			"initialValue": "12",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 400383294545453
+		},
+		{
+			"eventType": "variable",
+			"name": "PassengeraSpawnY",
+			"type": "number",
+			"initialValue": "50",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 319096937953626
+		},
+		{
+			"functionName": "PassengerShoot",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "targetX",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 599105298107661
+				},
+				{
+					"name": "targetY",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 253056570288207
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "OBJ_ProjectileTarget",
+					"sid": 422223017871962
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 288208358066653,
+					"parameters": {
+						"object-to-create": "OBJ_ProjectileTarget",
+						"layer": "\"DebugEntities\"",
+						"x": "targetX",
+						"y": "targetY",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 417184344081754,
+					"parameters": {
+						"seconds": ".2"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 298173228814303,
+					"parameters": {
+						"object": "OBJ_TearProjectile",
+						"layer": "\"DebugEntities\"",
+						"image-point": "0",
+						"create-hierarchy": true
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "OBJ_TearProjectile",
+					"sid": 116837724237843,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "36"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "OBJ_TearProjectile",
+					"sid": 750579115853101,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "angle(Self.X, Self.Y, targetX, targetY)"
+					}
+				}
+			],
+			"sid": 888349243640103,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "OBJ_TearProjectile",
+							"sid": 915816227389534,
+							"parameters": {
+								"child": "T_TearProjectile_type1",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "T_TearProjectile_type1",
+							"sid": 316605225673209,
+							"parameters": {
+								"angle": "OBJ_TearProjectile.Bullet.AngleOfMotion"
+							}
+						}
+					],
+					"sid": 512010655004494
+				}
+			]
+		},
+		{
+			"functionName": "SpawnPassenger",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 218526999461039,
+					"parameters": {
+						"object-to-create": "OBJ_PassengerPawn",
+						"layer": "\"DebugEntities\"",
+						"x": "PassengeraSpawnX",
+						"y": "PassengeraSpawnY",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 555368328216220
+		},
+		{
+			"functionName": "MirrorPassenger",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-children",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 925829154886949,
+					"parameters": {
+						"child": "T_PassengerPawn",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "T_PassengerPawn",
+					"sid": 758925563584263,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 815137016620506
+		},
+		{
+			"functionName": "DemirrorPassenger",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-children",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 552403068152574,
+					"parameters": {
+						"child": "T_PassengerPawn",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "T_PassengerPawn",
+					"sid": 712260943108114,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 105710901659640
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 246690005297847,
+					"parameters": {
+						"object": "OBJ_MapTransit"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 458579001546808,
+					"parameters": {
+						"first-value": "distance(OBJ_PassengerPawn.X, OBJ_PassengerPawn.Y, OBJ_MapTransit.X, OBJ_MapTransit.Y)",
+						"comparison": 2,
+						"second-value": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 846736727261434,
+					"parameters": {
+						"variable": "PassengeraSpawnX",
+						"value": "OBJ_MapTransit.GotoX"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 191726907102858,
+					"parameters": {
+						"variable": "PassengeraSpawnY",
+						"value": "OBJ_MapTransit.GotoY"
+					}
+				},
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 831343976888532,
+					"parameters": {
+						"layout": "OBJ_MapTransit.GotoLayout"
+					}
+				}
+			],
+			"sid": 981927726697115
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-path-found",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 453579309552717,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 960979614493216,
+					"parameters": {
+						"object-to-create": "OBJ_PathTarget",
+						"layer": "\"DebugEntities\"",
+						"x": "OBJ_PassengerPawn.Pathfinding.NodeXAt(OBJ_PassengerPawn.Pathfinding.NodeCount-1)",
+						"y": "OBJ_PassengerPawn.Pathfinding.NodeYAt(OBJ_PassengerPawn.Pathfinding.NodeCount-1)",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "move-along-path",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 837684301588697,
+					"behaviorType": "Pathfinding"
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 618805716358632,
+					"parameters": {
+						"instance-variable": "SoftLerpTowardPathTarget",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 863668172648387,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "OBJ_PathTarget",
+							"sid": 230713109350981,
+							"parameters": {
+								"comparison": 4,
+								"x-co-ordinate": "OBJ_PassengerPawn.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "MirrorPassenger",
+							"sid": 455013654178234
+						}
+					],
+					"sid": 805841481968779
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 938033033035527
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "DemirrorPassenger",
+							"sid": 182141638329702
+						}
+					],
+					"sid": 994043718507449
+				},
+				{
+					"eventType": "variable",
+					"name": "i",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 459176284975505
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 682477687205518,
+							"parameters": {
+								"name": "\"i\"",
+								"start-index": "0",
+								"end-index": "OBJ_PassengerPawn.Pathfinding.NodeCount-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 725781327220603,
+							"parameters": {
+								"variable": "i",
+								"value": "loopindex(\"i\")"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 323753731291508,
+							"parameters": {
+								"object-to-create": "OBJ_PathNode",
+								"layer": "\"DebugEntities\"",
+								"x": "OBJ_PassengerPawn.Pathfinding.NodeXAt(i)",
+								"y": "OBJ_PassengerPawn.Pathfinding.NodeYAt(i)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 745440062202462
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 804146632110219,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "OBJ_PathNode",
+					"sid": 150118542557251
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 783173833209169,
+					"parameters": {
+						"instance-variable": "SoftLerpTowardPathTarget",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 124379827433089
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 954509628307786,
+					"parameters": {
+						"object": "OBJ_PathNode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "OBJ_PathNode",
+					"sid": 295687626930627
+				}
+			],
+			"sid": 289413529268932
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 607683031320372,
+					"parameters": {
+						"instance-variable": "SoftLerpTowardPathTarget"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 186267391786222,
+					"parameters": {
+						"x": "lerp(Self.X, OBJ_PathTarget.X, 0.01)",
+						"y": "lerp(Self.Y, OBJ_PathTarget.Y, 0.01)"
+					}
+				}
+			],
+			"sid": 581693705793631
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 784531795492000,
+					"parameters": {
+						"first-value": "distance(OBJ_PassengerPawn.X, OBJ_PassengerPawn.Y, OBJ_PathTarget.X, OBJ_PathTarget.Y)",
+						"comparison": 2,
+						"second-value": "0.1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "OBJ_PassengerPawn",
+					"sid": 123705346707333,
+					"parameters": {
+						"instance-variable": "SoftLerpTowardPathTarget",
+						"value": "true"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "OBJ_PathTarget",
+					"sid": 784866229415996
+				}
+			],
+			"sid": 132147883830219
+		}
+	],
+	"sid": 546252864434774
+}

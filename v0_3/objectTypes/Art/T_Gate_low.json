@@ -1,0 +1,37 @@
+{
+	"name": "T_Gate_low",
+	"plugin-id": "Sprite",
+	"sid": 324052497805057,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 47,
+						"height": 35,
+						"originX": 0.5638297872340425,
+						"originY": 1.2285714285714286,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2845384,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 590315838492035,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"name": "SpriteSolidTrait",
+	"plugin-id": "Sprite",
+	"sid": 761272884501992,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 276294742648482
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_InvisibleWall",
+		"OBJ_Blocker",
+		"OBJ_Enemy"
+	]
+}

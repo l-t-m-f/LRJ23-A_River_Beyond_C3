@@ -1,0 +1,17 @@
+{
+	"name": "TiledVerticalWaveTrait",
+	"plugin-id": "TiledBg",
+	"sid": 798878733769173,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 729925552354655
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_SeaBackgroundTiled"
+	]
+}

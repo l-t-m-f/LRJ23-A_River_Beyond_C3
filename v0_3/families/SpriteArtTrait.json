@@ -1,0 +1,16 @@
+{
+	"name": "SpriteArtTrait",
+	"plugin-id": "Sprite",
+	"sid": 916744579275411,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"T_Sprite",
+		"T_PlayerBoatArt",
+		"T_Ghast",
+		"T_JellyFuss",
+		"T_ShadeThrower",
+		"T_Rock1"
+	]
+}

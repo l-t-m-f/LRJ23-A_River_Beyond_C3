@@ -1,0 +1,17 @@
+{
+	"name": "SpriteBulletTrait",
+	"plugin-id": "Sprite",
+	"sid": 423236326809819,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 125946484092802
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_PlayerCanonball"
+	]
+}

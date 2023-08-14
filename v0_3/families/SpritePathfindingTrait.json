@@ -1,0 +1,32 @@
+{
+	"name": "SpritePathfindingTrait",
+	"plugin-id": "Sprite",
+	"sid": 453960737565372,
+	"instanceVariables": [
+		{
+			"name": "bHasPath",
+			"type": "boolean",
+			"desc": "An extra variable outside the Pathfinding behavior which should reflect whether or not this trait owner has a path.",
+			"show": true,
+			"sid": 899976698571424
+		},
+		{
+			"name": "NextNodeID",
+			"type": "number",
+			"desc": "ID of the next node to move towards with the complementary movement trait (usually won't be using built-in Pathfinding movement).",
+			"show": true,
+			"sid": 649247496848459
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 282803225717939
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_PlayerBoatBase"
+	]
+}

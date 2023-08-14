@@ -1,0 +1,34 @@
+{
+	"name": "SpriteDownstreamTrait",
+	"plugin-id": "Sprite",
+	"sid": 788728980123719,
+	"instanceVariables": [
+		{
+			"name": "DownstreamDefaultSpeed_min",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 114846637399268
+		},
+		{
+			"name": "DownstreamDefaultSpeed_max",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 574161946464434
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "Downstream",
+			"sid": 212378566047348
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_Enemy",
+		"OBJ_PlayerBoatBase",
+		"OBJ_Blocker"
+	]
+}

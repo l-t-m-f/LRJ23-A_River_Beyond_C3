@@ -1,0 +1,17 @@
+{
+	"name": "SpriteTweenTrait",
+	"plugin-id": "Sprite",
+	"sid": 760992730154046,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 767763503037148
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"OBJ_PlayerBoatBase"
+	]
+}

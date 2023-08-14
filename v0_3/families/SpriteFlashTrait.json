@@ -1,0 +1,19 @@
+{
+	"name": "SpriteFlashTrait",
+	"plugin-id": "Sprite",
+	"sid": 207269568727155,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 208192569576848
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"T_PlayerBoatArt",
+		"OBJ_Enemy",
+		"OBJ_PlayerBoatBase"
+	]
+}

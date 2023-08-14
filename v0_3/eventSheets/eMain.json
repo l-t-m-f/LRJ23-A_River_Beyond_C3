@@ -1,0 +1,1507 @@
+{
+	"name": "eMain",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "eUI"
+		},
+		{
+			"eventType": "variable",
+			"name": "RANDOM_MONSTER_ODDS",
+			"type": "number",
+			"initialValue": "0.15",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 929664193398095
+		},
+		{
+			"eventType": "variable",
+			"name": "RANDOM_OBSTACLE_ODDS",
+			"type": "number",
+			"initialValue": "0.25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 383737479148318
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 506957840434188
+				}
+			],
+			"actions": [],
+			"sid": 455582169475817,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "OBJ_PlayerBoatBase",
+							"sid": 517214616664008,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"JumpSimulation\""
+							}
+						},
+						{
+							"id": "is-paused",
+							"objectClass": "OBJ_PlayerBoatBase",
+							"sid": 112861217378228,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"JumpSimulation\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "T_PlayerBoatArt",
+							"sid": 966863932738275,
+							"parameters": {
+								"x": "lerp(Self.X, OBJ_PlayerBoatBase.X, 0.2)",
+								"y": "lerp(Self.Y, OBJ_PlayerBoatBase.Y+OBJ_PlayerBoatBase.Tween.Value(\"JumpSimulation\"), 0.2)"
+							}
+						}
+					],
+					"sid": 592704277676810,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "OBJ_PlayerBoatBase",
+							"sid": 861303021916479,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"SinkSimulation\""
+							}
+						},
+						{
+							"id": "is-paused",
+							"objectClass": "OBJ_PlayerBoatBase",
+							"sid": 404077251158801,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"SinkSimulation\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "T_PlayerBoatArt",
+							"sid": 120043099137313,
+							"parameters": {
+								"x": "lerp(Self.X, OBJ_PlayerBoatBase.X, 0.2)",
+								"y": "lerp(Self.Y, OBJ_PlayerBoatBase.Y+OBJ_PlayerBoatBase.Tween.Value(\"SinkSimulation\"), 0.2)"
+							}
+						}
+					],
+					"sid": 727446027287706,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "OBJ_PlayerBoatBase",
+							"sid": 169056902472514,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"SinkSimulation_opacity\""
+							}
+						},
+						{
+							"id": "is-paused",
+							"objectClass": "OBJ_PlayerBoatBase",
+							"sid": 435912487148932,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"SinkSimulation_opacity\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "T_PlayerBoatArt",
+							"sid": 643687243879305,
+							"parameters": {
+								"opacity": "OBJ_PlayerBoatBase.Tween.Value(\"SinkSimulation_opacity\")"
+							}
+						}
+					],
+					"sid": 511682647447588,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 745307699542168
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "T_PlayerBoatArt",
+							"sid": 162350147161175,
+							"parameters": {
+								"x": "lerp(Self.X, OBJ_PlayerBoatBase.X, 0.2)",
+								"y": "lerp(Self.Y, OBJ_PlayerBoatBase.Y, 0.2)"
+							}
+						}
+					],
+					"sid": 195538348429630
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "T_PlayerBoatArt",
+							"sid": 544678857717969,
+							"parameters": {
+								"angle": "anglelerp(Self.Angle, OBJ_PlayerBoatBase.Angle, 0.2)"
+							}
+						}
+					],
+					"sid": 747593470633153
+				},
+				{
+					"eventType": "variable",
+					"name": "r",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 555940493604970
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 302953180849894,
+							"parameters": {
+								"variable": "r",
+								"value": "random(0, 100)"
+							}
+						}
+					],
+					"sid": 311435576569380
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 958650550026019,
+							"parameters": {
+								"variable": "r",
+								"comparison": 2,
+								"value": "RANDOM_MONSTER_ODDS"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "EnemySpawnByTemplateName",
+							"sid": 884241803176704,
+							"parameters": [
+								"choose(\"Sprite\", \"ShadeThrower\", \"Ghast\", \"JollyFuss\")"
+							]
+						}
+					],
+					"sid": 698620733309999
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 292220857447850,
+							"parameters": {
+								"variable": "r",
+								"value": "random(0, 100)"
+							}
+						}
+					],
+					"sid": 354226352021562
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 206457158030016,
+							"parameters": {
+								"variable": "r",
+								"comparison": 2,
+								"value": "RANDOM_OBSTACLE_ODDS"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ObstacleSpawnByTemplateName",
+							"sid": 222010348882830,
+							"parameters": [
+								"choose(\"Sprite\", \"ShadeThrower\", \"Ghast\", \"JollyFuss\")"
+							]
+						}
+					],
+					"sid": 969392889492948
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "TraitDownstreamTick",
+							"sid": 449857995247383
+						}
+					],
+					"sid": 150626724430892
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Art",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "SpriteArtTrait",
+							"sid": 480243025907635
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-layer",
+							"objectClass": "SpriteArtTrait",
+							"sid": 896481164058207,
+							"parameters": {
+								"layer": "\"Art\""
+							}
+						}
+					],
+					"sid": 121398393984809
+				}
+			],
+			"sid": 982133630524679
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Downstream stuff",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "SpriteDownstreamTrait",
+							"sid": 404291110600260
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "SpriteDownstreamTrait",
+							"sid": 922013646028441,
+							"behaviorType": "Downstream",
+							"parameters": {
+								"max-speed": "random(Self.DownstreamDefaultSpeed_min, Self.DownstreamDefaultSpeed_max)"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "SpriteDownstreamTrait",
+							"sid": 200586579890774,
+							"behaviorType": "Downstream",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 516281435767232
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "OBJ_PlayerBoatBase",
+							"sid": 269240314545503,
+							"parameters": {
+								"object": "OBJ_Enemy"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "OBJ_Enemy",
+							"sid": 258239110378203,
+							"parameters": {
+								"instance-variable": "bCanDealDamage"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "OBJ_PlayerBoatBase",
+							"sid": 492914048863683,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "T_PlayerBoatArt",
+							"sid": 835850717033144,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "OBJ_Enemy",
+							"sid": 125879060238919,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "0.5"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "OBJ_Enemy",
+							"sid": 495340000416437,
+							"parameters": {
+								"instance-variable": "bCanDealDamage",
+								"value": "false"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 675793635238958,
+							"parameters": {
+								"variable": "PlayerCurrentHealth",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 830693854682908,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 681685738768367,
+									"parameters": {
+										"variable": "PlayerCurrentHealth",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 694324501875396
+								}
+							],
+							"sid": 156508544448546
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 625265462373124
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "T_HealthBarMask",
+									"sid": 281446009362978,
+									"parameters": {
+										"frame-number": "PlayerCurrentHealth"
+									}
+								}
+							],
+							"sid": 409644995721907
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-flash-ended",
+							"objectClass": "OBJ_Enemy",
+							"sid": 511764139616484,
+							"behaviorType": "Flash"
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "OBJ_Enemy",
+							"sid": 670622796900683
+						}
+					],
+					"sid": 828400732293157
+				},
+				{
+					"functionName": "TraitDownstreamTick",
+					"functionDescription": "",
+					"functionCategory": "Trait - Downstream",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 540842789321669,
+							"parameters": {
+								"object": "SpriteDownstreamTrait"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-x",
+							"objectClass": "SpriteDownstreamTrait",
+							"sid": 514141723874115,
+							"behaviorType": "Downstream",
+							"parameters": {
+								"vector-x": "(AdvancedRandom.Cellular2d(Self.Y, time) * 0.2* 2) - 0.2"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "SpriteDownstreamTrait",
+							"sid": 865480796433127,
+							"behaviorType": "Downstream",
+							"parameters": {
+								"vector-y": "10"
+							}
+						}
+					],
+					"sid": 527979801800110
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemies",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "EnemySpawnByTemplateName",
+							"functionDescription": "",
+							"functionCategory": "Enemy",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "template_name",
+									"type": "string",
+									"initialValue": "NULL",
+									"comment": "",
+									"sid": 326759600649832
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 327533965659819,
+									"parameters": {
+										"object-to-create": "OBJ_Enemy",
+										"layer": "\"Debug\"",
+										"x": "random(1, LayoutWidth-1)",
+										"y": "random(-64, -4)",
+										"create-hierarchy": true,
+										"template-name": "template_name"
+									}
+								}
+							],
+							"sid": 674121616559682
+						}
+					],
+					"sid": 902706182219087
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Obstacles",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "ObstacleSpawnByTemplateName",
+							"functionDescription": "",
+							"functionCategory": "Obstacle",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "template_name",
+									"type": "string",
+									"initialValue": "NULL",
+									"comment": "",
+									"sid": 908259535878806
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 584954525171656,
+									"parameters": {
+										"object-to-create": "OBJ_Blocker",
+										"layer": "\"Debug\"",
+										"x": "random(1, LayoutWidth-1)",
+										"y": "random(-64, -4)",
+										"create-hierarchy": true,
+										"template-name": "template_name"
+									}
+								}
+							],
+							"sid": 629067251770780
+						}
+					],
+					"sid": 345096464547575
+				}
+			],
+			"sid": 393158670302249
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap",
+							"objectClass": "Touch",
+							"sid": 143872854016038
+						}
+					],
+					"actions": [],
+					"sid": 782715670582330,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 330531380190266,
+									"parameters": {
+										"first-value": "Functions.PlayerBoatTryJump",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayerBoatJump",
+									"sid": 118838413527772
+								}
+							],
+							"sid": 630845870656731
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 294864898634757
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayerBoatTryFindPath",
+									"sid": 539469563089999
+								}
+							],
+							"sid": 413551332957854
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-hold",
+							"objectClass": "Touch",
+							"sid": 818837756328893
+						}
+					],
+					"actions": [],
+					"sid": 842363408646559,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 848947779577374,
+									"parameters": {
+										"first-value": "Functions.PlayerBoatTrySubmerge",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayerBoatSubmerge",
+									"sid": 424705728263275
+								}
+							],
+							"sid": 265764703980628
+						}
+					]
+				}
+			],
+			"sid": 222410111457844
+		},
+		{
+			"eventType": "variable",
+			"name": "bPlayerBoatReceivingMoveSignal",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 707789116105181
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerBoatLerpSpeed",
+			"type": "number",
+			"initialValue": "0.02",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 481883674300966
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerBoatAngleLerpSpeed",
+			"type": "number",
+			"initialValue": "0.08",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 512559577893252
+		},
+		{
+			"eventType": "variable",
+			"name": "g_player_boat_spawn_x",
+			"type": "number",
+			"initialValue": "32",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 348053623219027
+		},
+		{
+			"eventType": "variable",
+			"name": "g_player_boat_spawn_y",
+			"type": "number",
+			"initialValue": "55",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 525460788608983
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerCurrentHealth",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 862656999195149
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Boat",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Custom navigation",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "OBJ_PlayerBoatBase",
+											"sid": 156684826682147,
+											"parameters": {
+												"instance-variable": "bHasPath"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 697047188182640,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "angle_player_to_next_node",
+											"type": "number",
+											"initialValue": "-1",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 484572759397430
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 616487997442587,
+													"parameters": {
+														"object": "OBJ_PlayerBoatMoveNode",
+														"expression": "OBJ_PlayerBoatMoveNode.NodeID",
+														"comparison": 0,
+														"value": "OBJ_PlayerBoatBase.NextNodeID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 793932213986007,
+													"parameters": {
+														"variable": "angle_player_to_next_node",
+														"value": "angle(OBJ_PlayerBoatBase.X, OBJ_PlayerBoatBase.Y, OBJ_PlayerBoatMoveNode.X, OBJ_PlayerBoatMoveNode.Y)"
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "OBJ_PlayerBoatBase",
+													"sid": 244393406767953,
+													"parameters": {
+														"angle": "anglelerp(Self.Angle, angle_player_to_next_node+180, PlayerBoatAngleLerpSpeed)"
+													}
+												}
+											],
+											"sid": 647025024523776,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 697894700634788,
+															"parameters": {
+																"first-value": "anglediff(OBJ_PlayerBoatBase.Angle, angle_player_to_next_node+180)",
+																"comparison": 2,
+																"second-value": "5"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-angle",
+															"objectClass": "OBJ_PlayerBoatBase",
+															"sid": 331221141895719,
+															"parameters": {
+																"angle": "anglelerp(Self.Angle, angle_player_to_next_node+180, PlayerBoatAngleLerpSpeed)"
+															}
+														},
+														{
+															"id": "set-position",
+															"objectClass": "OBJ_PlayerBoatBase",
+															"sid": 898018351207461,
+															"parameters": {
+																"x": "lerp(Self.X, OBJ_PlayerBoatMoveNode.X, PlayerBoatLerpSpeed)",
+																"y": "lerp(Self.Y, OBJ_PlayerBoatMoveNode.Y, PlayerBoatLerpSpeed)"
+															}
+														}
+													],
+													"sid": 982803933501794
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "OBJ_PlayerBoatBase",
+													"sid": 288571851319865,
+													"parameters": {
+														"object": "OBJ_PlayerBoatMoveNode"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "OBJ_PlayerBoatMoveNode",
+													"sid": 808705248344244
+												},
+												{
+													"id": "add-to-instvar",
+													"objectClass": "OBJ_PlayerBoatBase",
+													"sid": 415053661227683,
+													"parameters": {
+														"instance-variable": "NextNodeID",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 712589309909089
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "OBJ_PlayerBoatBase",
+													"sid": 480770521855411,
+													"parameters": {
+														"object": "OBJ_PlayerBoatMoveTarget"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "OBJ_PlayerBoatMoveTarget",
+													"sid": 883789426386475
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "OBJ_PlayerBoatBase",
+													"sid": 600164005392541,
+													"parameters": {
+														"instance-variable": "bHasPath",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 317992318833430
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-path-found",
+											"objectClass": "OBJ_PlayerBoatBase",
+											"sid": 380857073185405,
+											"behaviorType": "Pathfinding"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "OBJ_PlayerBoatBase",
+											"sid": 832237052491229,
+											"parameters": {
+												"instance-variable": "NextNodeID",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 634707430015203,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "node_max_index",
+											"type": "number",
+											"initialValue": "-1",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 357278705125067
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 136427763451853,
+													"parameters": {
+														"variable": "node_max_index",
+														"value": "OBJ_PlayerBoatBase.Pathfinding.NodeCount-1"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 626982153563014,
+													"parameters": {
+														"object-to-create": "OBJ_PlayerBoatMoveTarget",
+														"layer": "\"Debug\"",
+														"x": "OBJ_PlayerBoatBase.Pathfinding.NodeXAt(node_max_index)",
+														"y": "OBJ_PlayerBoatBase.Pathfinding.NodeYAt(node_max_index)",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												}
+											],
+											"sid": 392834349077261,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "i",
+													"type": "number",
+													"initialValue": "-1",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 609539944246133
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for",
+															"objectClass": "System",
+															"sid": 604097571952508,
+															"parameters": {
+																"name": "\"i\"",
+																"start-index": "0",
+																"end-index": "node_max_index"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 876940394137843,
+															"parameters": {
+																"variable": "i",
+																"value": "loopindex(\"i\")"
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 179653618364467,
+															"parameters": {
+																"object-to-create": "OBJ_PlayerBoatMoveNode",
+																"layer": "\"Debug\"",
+																"x": "OBJ_PlayerBoatBase.Pathfinding.NodeXAt(i)",
+																"y": "OBJ_PlayerBoatBase.Pathfinding.NodeYAt(i)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "OBJ_PlayerBoatMoveNode",
+															"sid": 585967936658189,
+															"parameters": {
+																"instance-variable": "NodeID",
+																"value": "i"
+															}
+														}
+													],
+													"sid": 714093425168577
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "OBJ_PlayerBoatBase",
+															"sid": 197702144193044,
+															"parameters": {
+																"instance-variable": "bHasPath",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 707597944438475
+												}
+											]
+										}
+									]
+								}
+							],
+							"sid": 736613239467451
+						},
+						{
+							"functionName": "PlayerBoatSpawn",
+							"functionDescription": "",
+							"functionCategory": "PlayerBoat",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 962357456613160,
+									"parameters": {
+										"object-to-create": "OBJ_PlayerBoatBase",
+										"layer": "\"Debug\"",
+										"x": "g_player_boat_spawn_x",
+										"y": "g_player_boat_spawn_y",
+										"create-hierarchy": true,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "regenerate-obstacle-map",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 138784759911359,
+									"behaviorType": "Pathfinding"
+								}
+							],
+							"sid": 952396091512656
+						},
+						{
+							"functionName": "PlayerBoatTryJump",
+							"functionDescription": "",
+							"functionCategory": "PlayerBoat",
+							"functionReturnType": "number",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 608149080129826,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 417320188997206,
+											"parameters": {
+												"object": "OBJ_PlayerBoatBase"
+											}
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "OBJ_PlayerBoatBase",
+											"sid": 878636876998763,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"JumpSimulation\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "OBJ_PlayerBoatBase",
+											"sid": 487014540116131,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"SinkSimulation\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 186659160260737,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 914642468874118
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 938513417090752
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 526875243602731,
+											"parameters": {
+												"value": "-1"
+											}
+										}
+									],
+									"sid": 617344824446900
+								}
+							]
+						},
+						{
+							"functionName": "PlayerBoatJump",
+							"functionDescription": "",
+							"functionCategory": "PlayerBoat",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "tween-value",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 395045367998044,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"JumpSimulation\"",
+										"start-value": "0",
+										"end-value": "-12",
+										"time": "0.2",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 932088556178731,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "pause-tweens",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 849383354739157,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"JumpSimulation\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 329779363469511,
+									"parameters": {
+										"seconds": "0.15"
+									}
+								},
+								{
+									"id": "resume-tweens",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 384544803956333,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"JumpSimulation\""
+									}
+								}
+							],
+							"sid": 384349863689084
+						},
+						{
+							"functionName": "PlayerBoatTryFindPath",
+							"functionDescription": "",
+							"functionCategory": "PlayerBoat",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "OBJ_PlayerBoatMoveTarget",
+									"sid": 681165759284248
+								},
+								{
+									"id": "destroy",
+									"objectClass": "OBJ_PlayerBoatMoveNode",
+									"sid": 160554447533403
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 145651498498739,
+									"parameters": {
+										"instance-variable": "bHasPath",
+										"value": "false"
+									}
+								},
+								{
+									"id": "find-path",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 396179242525759,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"x": "Touch.X",
+										"y": "Touch.Y"
+									}
+								}
+							],
+							"sid": 266634925561608
+						},
+						{
+							"functionName": "PlayerBoatTrySubmerge",
+							"functionDescription": "",
+							"functionCategory": "PlayerBoat",
+							"functionReturnType": "number",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 499367148619714,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 330081498620573,
+											"parameters": {
+												"object": "OBJ_PlayerBoatBase"
+											}
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "OBJ_PlayerBoatBase",
+											"sid": 767683224073638,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"JumpSimulation\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "OBJ_PlayerBoatBase",
+											"sid": 753447501799282,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"SinkSimulation\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 121453567453450,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 276981630514810
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 246416645364227
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 928374142874621,
+											"parameters": {
+												"value": "-1"
+											}
+										}
+									],
+									"sid": 880932317150795
+								}
+							]
+						},
+						{
+							"functionName": "PlayerBoatSubmerge",
+							"functionDescription": "",
+							"functionCategory": "PlayerBoat",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "tween-value",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 951666333791160,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"SinkSimulation\"",
+										"start-value": "0",
+										"end-value": "4",
+										"time": "0.5",
+										"ease": "easeinoutexpo",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 372949526594656,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"SinkSimulation_opacity\"",
+										"start-value": "100",
+										"end-value": "30",
+										"time": "0.5",
+										"ease": "easeinoutexpo",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 448805639026572,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "pause-tweens",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 605985157504531,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"SinkSimulation\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 826649549991982,
+									"parameters": {
+										"seconds": "0.15"
+									}
+								},
+								{
+									"id": "resume-tweens",
+									"objectClass": "OBJ_PlayerBoatBase",
+									"sid": 710109905440463,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"SinkSimulation\""
+									}
+								}
+							],
+							"sid": 859855246677416
+						}
+					],
+					"sid": 703744821521627
+				}
+			],
+			"sid": 122926846374321
+		}
+	],
+	"sid": 220770055963973
+}
